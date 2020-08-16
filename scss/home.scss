@@ -1,5 +1,8 @@
 @import 'config';
 
-body{
-    background-color: $third-color;
+.home-banner{
+    background-image: url("/assets/four.jpg");
+    height: 80vh;
+    background-size: 100% 100%;
+    // background-position: center;
 }
