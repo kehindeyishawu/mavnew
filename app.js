@@ -10,11 +10,11 @@ app.set("view engine", "ejs")
 
 
 // requiring routes
-const route = require("./route.js");
+const routes = require("./routes.js");
 
 
 // Using routes
-app.use(route)
+app.use(routes)
 
 app.listen(process.env.PORT || 3000, ()=>{
     console.log("server has started running")
