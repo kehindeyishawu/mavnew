@@ -10,7 +10,7 @@
 
     .home-display{
         position: absolute;
-        top: 90px;
+        top: 83px;
         left: 90px;
         width: 40%;
         color: $third-color;
@@ -28,7 +28,7 @@
             animation-timing-function: ease-out;
         }
         a{
-            margin-top: 3.2em;
+            margin-top: 30px;
             animation-name: home-slide-a;
             animation-duration: 2s;
             animation-delay: 2s;
@@ -83,26 +83,6 @@
     }
 }
 
-// medium device landscape view
-
-@media (max-width: $medium) and (orientation: landscape){
-    #home-banner{
-        img{
-            height: 95vh;
-        }
-        .home-display{
-            top: 50px;
-            // width: 58%;
-            left: 40px;
-            a{
-                margin-top: 2em;
-            }
-            h1{
-                font-size: 30px;
-            }
-        }
-    }
-}
 
 // small mobile view
 @media (max-width: $small){
