@@ -4,6 +4,39 @@ $third-color: #edf2f4;
 $fourth-color: #ef233c;
 $fifth-color: #d90429;
 
+// mobile break points
+$small: 576px;
+$medium: 768px;
+$large: 960px;
+
 body{
     font-family: 'Merriweather', serif;
+}
+
+#menu-details{
+    .fas{
+        color: $fourth-color;
+    }
+    .fab{
+        color: $second-color;
+        &:hover{
+            color: $first-color;
+        }
+    }
+    a:first-of-type{
+        color: $first-color;
+        &:hover{
+            color: $fourth-color;
+            text-decoration: none;
+        }
+    }
+}
+
+nav{
+    img{
+        width: 65px;
+    }
+    .navbar-brand{
+        font-family: 'Pacifico', cursive;
+    }
 }

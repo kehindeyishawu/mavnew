@@ -1,8 +1,63 @@
 @import 'config';
 
 .home-banner{
+    background-color: $third-color;
     background-image: url("/assets/four.jpg");
     height: 80vh;
     background-size: 100% 100%;
-    // background-position: center;
+    position: relative;
+    
+    .home-display{
+        position: absolute;
+        top: 100px;
+        left: 90px;
+        width: 40%;
+        color: $third-color;
+        h1{
+            animation-name: home-slide-head;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        p{
+            margin-top: 9%;
+            animation-name: home-slide-p;
+            animation-duration: 1s;
+        }
+    }
+}
+
+
+@keyframes home-slide-head{
+    0%{
+        transform: translateY(-500px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes home-slide-p{
+    0%{
+        transform: translateX(-1000px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+@media (max-width: $medium){
+    .home-banner{
+        height: 350px;
+        .home-display{
+            top: 70px;
+            width: 58%;
+            left: 40px;
+        }
+        p{
+            font-size: small;
+        }
+    }
 }
