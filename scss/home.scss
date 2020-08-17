@@ -1,31 +1,42 @@
 @import 'config';
 
-.home-banner{
-    background-color: $third-color;
-    background-image: url("/assets/four.jpg");
-    height: 80vh;
-    background-size: 100% 100%;
+#home-banner{
     position: relative;
     
+    img{
+        height: 80vh;
+        width: 100%;
+    }
+
     .home-display{
         position: absolute;
-        top: 100px;
+        top: 90px;
         left: 90px;
         width: 40%;
         color: $third-color;
         h1{
             animation-name: home-slide-head;
             animation-duration: 2s;
-            animation-fill-mode: forwards;
         }
         p{
             margin-top: 9%;
             animation-name: home-slide-p;
-            animation-duration: 1s;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            transform: translateY(-500px);
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+        }
+        a{
+            margin-top: 3.2em;
+            animation-name: home-slide-a;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
         }
     }
 }
-
 
 @keyframes home-slide-head{
     0%{
@@ -47,17 +58,35 @@
     }
 }
 
+@keyframes home-slide-a{
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
 @media (max-width: $medium){
-    .home-banner{
-        height: 350px;
+    #home-banner{
         .home-display{
             top: 70px;
             width: 58%;
             left: 40px;
         }
         p{
-            font-size: small;
+            font-size: 13px;
+        }
+    }
+}
+
+@media (max-width: $small){
+    #home-banner{
+        img{
+            height: 450px;
         }
     }
 }
