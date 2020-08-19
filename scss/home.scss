@@ -1,5 +1,10 @@
 @import 'config';
 
+@mixin heading(){
+    margin-bottom: 48px;
+    color: darken($color: $second-color, $amount: 25px);
+}
+
 #home-banner{
     position: relative;
     
@@ -70,6 +75,145 @@
 }
 
 
+#about{
+    h2{
+      color: darken($color: $second-color, $amount: 25px); 
+      text-align: center; 
+    }
+    img{
+        width: 100%;
+        height: 580px;
+    }
+    p{
+        font-weight: 300;
+        line-height: 28px;
+    }
+    .fas{
+        background-color: $third-color;
+        font-size: 32px;
+        border-radius: 10px;
+        transition-property: background-color;
+        transition-property: color;
+        transition-duration: 1000ms;
+        &:hover{
+            background-color: $first-color;
+            color: $third-color;
+        }
+    }
+    h3{
+        font-size: 17px;
+        font-weight: bold;
+    }
+}
+
+#why-us{
+    text-align: center;
+    h2{
+        margin-bottom: 45px;
+        color: darken($color: $second-color, $amount: 25px);
+    }
+    h3{
+        font-size: 19px;
+        &:hover{
+            color: $fourth-color;
+            transition-property: color;
+            transition-duration: 500ms;
+        }
+        &::after{
+            content: "";
+            margin: 10px auto;
+            width: 60px;
+            height: 3px;
+            display: block;
+            background-color: $fourth-color;
+        }
+    }
+    p{
+        font-size: 13px;
+    }
+    i{
+        font-size: 30px;
+        color: $fifth-color;
+    }
+}
+
+#blog{
+    h2{
+        @include heading;
+        // text-align: center;
+        // &::after{
+        //     content: "";
+        //     margin: 10px auto;
+        //     text-align: center;
+        //     width: 80px;
+        //     height: 3px;
+        //     display: block;
+        //     background-color: $first-color;
+        // }
+
+        border-bottom: 5px solid $fifth-color;
+        padding-bottom: 10px;
+        font-size: 38px;
+    }
+
+    img{
+        width: 100%;
+        // height: 370px;
+        height: 340px;
+        border-radius: 10px;
+    }
+    .blog-content{
+        position: relative;
+        div{
+            h3{
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 90%;
+            border-radius: 5px;
+            padding: 20px;
+
+           a{
+               color: $fourth-color;
+           }
+        }
+
+        &:hover{
+            div{
+                background-color:$first-color;
+                transition-property: background-color;
+                transition-duration: 1s;
+                color: white;
+                a{
+                    color: white;
+                    i{
+                        animation-name: infinite-slide;
+                        animation-duration: 2s;
+                        animation-iteration-count: infinite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes infinite-slide{
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-10px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
 @media (max-width: $medium){
     #home-banner{
         .home-display{
@@ -81,8 +225,13 @@
             font-size: 13px;
         }
     }
-}
 
+    #about{
+        img{
+            height: 380px;
+        }
+    }
+}
 
 // small mobile view
 @media (max-width: $small){
