@@ -44,3 +44,64 @@ nav{
         font-family: 'Pacifico', cursive;
     }
 }
+
+footer{
+    background-color: $first-color;
+    color: $third-color;
+    padding-top: 60px;
+
+    h3{
+        font-size: 23px;
+    }
+
+    ul{
+        list-style: none;
+        padding-left: 15px;
+
+        li{
+            line-height: 40px;
+            .fas{
+                margin-right: 5px;
+                color: $second-color;
+            }
+            a{
+                color: $third-color;
+                &:hover{
+                    color: $second-color;
+                    text-decoration: none;
+                    transition-property: color;
+                    transition-duration: 400ms;
+                }
+            }
+        }
+    }
+    address{
+        .fab{
+            color: white;
+            padding: 10px;
+            margin-bottom: 7px;
+            border-radius: 7px;
+            background-color: lighten($color: $first-color, $amount: 8%);
+            transition-property: background-color;
+            transition-duration: 400ms;
+
+            &:hover{
+                background-color: darken($color: $first-color, $amount: 10%);
+            }
+        }
+    }
+    .btn{
+        background-color: $fifth-color;
+    }
+    #footer-bottom{
+        text-align: center;
+        background-color: darken($color: $first-color, $amount: 8%);
+        padding: 25px 0;
+        margin-top: 30px;
+        .credit{
+            font-size: 13px;
+            font-weight: 300;
+            margin-top: 1em;
+        }
+    }
+}
