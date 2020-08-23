@@ -23,19 +23,25 @@
           <div class="container">
             <div class="row py-2">
               <div class="col-3">
-                <small><i class="fas fa-envelope mr-1"></i><a href="mailto:">contact@example.com</a></small>
+                <address class="mb-0">
+                  <small><i class="fas fa-envelope mr-1"></i><a href="mailto:">contact@example.com</a></small>
+                </address>
               </div>
               <div class="col-3 mr-auto">
-                <small><i class="fas fa-phone-alt mr-1"></i> +2348067361005</small>
+                <address class="mb-0">
+                  <small><i class="fas fa-phone-alt mr-1"></i> +2348067361005</small>
+                </address>
               </div>
-              <div class="col-3">
-                <small>
-                <a href=""><i class="fab fa-facebook-f mr-3"></i></a>
-                <a href=""><i class="fab fa-twitter mr-3"></i></a>
-                <a href=""><i class="fab fa-instagram mr-3"></i></a>
-                <a href=""><i class="fab fa-youtube mr-3"></i></a>
-                <a href=""><i class="fab fa-pinterest"></i></a>
-                </small>
+              <div class="col-2">
+                <address class="mb-0">
+                  <small>
+                    <a href=""><i class="fab fa-facebook-f mr-3"></i></a>
+                    <a href=""><i class="fab fa-twitter mr-3"></i></a>
+                    <a href=""><i class="fab fa-instagram mr-3"></i></a>
+                    <a href=""><i class="fab fa-youtube mr-3"></i></a>
+                    <a href=""><i class="fab fa-pinterest"></i></a>
+                  </small>
+                </address>
               </div>
             </div>
           </div>
@@ -44,7 +50,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light border-top">
           <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
               <img src="https://res.cloudinary.com/mavnew/c_scale,q_auto,w_80/mavnew-logo.png" alt="mavnew logo">
               <strong>MAVNEW</strong>
             </a>
@@ -58,9 +64,16 @@
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link" href="#about">About</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
+                  <a class="nav-link" href="#why-us">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#blog">Blog</a>
+                </li>
+                <!-- dropdown link example -->
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
                   </a>
@@ -70,10 +83,11 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                   </div>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- disabled link example -->
+                <!-- <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -90,7 +104,7 @@
             <p>
               We give you and your body all the requirements needed for a daily fitness. Whether its an Upright, Recumbent or Semi-recumbent bike you need, Mavnew has everything you need to go hunting
             </p>
-            <a href="" class="btn btn-dark btn-md">Read More...</a>
+            <a href="#about" class="btn btn-dark btn-md">Read More...</a>
           </div>
         </section>
       </header>
@@ -99,25 +113,28 @@
       <section id="about" class="space-top">
         <div class="container shadow p-4">
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 align-self-center">
               <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:700/exercise-bike.jpg" alt="Exercise bike" sizes="100vw">
             </div>
-            <div class="col-lg-6 align-self-center">
+            <div class="col-lg-6">
               <h2 class="mt-2">About</h2>
-              <p> Reprehenderit eveniet doloremque laboriosam aperiam tempora, numquam tenetur assumenda rem eaque in odio, ex eligendi! Eligendi quae, hic, officia iste maiores ab molestiae distinctio quisquam, laudantium aliquid dolor. Numquam amet veniam ad officiis quia vitae ab tempore.</p>
+              <p>
+                Mavnew is a fitness and gym equipment review site. We specialize mostly on exercise bikes and provide advices or tips on how to stay fit and healthy.
+                We go into details about the products we review on our platform, informing our viewers of the pros and cons of our promotions, and most especially, why they should use them.
+              </p>
 
               <div class="media mt-5">
                 <i class="fas fa-heartbeat mr-4 p-4"></i>
                 <div class="media-body">
-                  <h3 class="mt-0">Media heading</h3>
-                  Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  <h3 class="mt-0">Cardio-workout</h3>
+                  Get tips on how to run an efficient and body sustaining cardio workout routine through the help of our exercise bikes. These types of exercise help increase bone density, lowers stress, expand lung capacity, lowers the risk of heart attacks (or high blood pressure) and of course promotes good sleep.
                 </div>
               </div>
               <div class="media mt-5">
                 <i class="fas fa-dumbbell mr-4 p-4"></i>
                 <div class="media-body">
-                  <h3 class="mt-0">Media heading</h3>
-                  Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  <h3 class="mt-0">Stay fit</h3>
+                  We hope to provide other tips in our articles to help transform your daily lifestyle routine into a body building or fitness optimised one. Let us help you start your fitness journey today. 
                 </div>
               </div>
             </div>
@@ -133,17 +150,19 @@
             <div class="col-md-6 col-lg-3 mb-3">
               <i class="fas fa-search border p-4 rounded-circle shadow mb-4"></i>
               <h3>Research</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde vel in corrupti nulla dolorem ipsum, corporis quaerat vero. Officiis?</p>
+              <p>We try as much as possible to provide good content for our viewers by doing alot of digging and research where necessary before compiling.</p>
             </div>
             <div class="col-md-6 col-lg-3 mb-3">
               <i class="fas fa-chart-line border p-4 rounded-circle shadow mb-4"></i>
               <h3>Quality</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde vel in corrupti nulla dolorem ipsum, corporis quaerat vero. Officiis?</p>
+              <p>
+                We recommend quality product for use with your workouts. The exercise bikes we review are to help you make a more informed decision on the purchases you need for a good fitness session.  
+              </p>
             </div>
             <div class="col-md-6 col-lg-3 mb-3">
               <i class="far fa-building border p-4 rounded-circle shadow mb-4"></i>
               <h3>Big Brands</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde vel in corrupti nulla dolorem ipsum, corporis quaerat vero. Officiis?</p>
+              <p>Most of our gym equipments are from top reputable brands in the market which have also made a name for themselves.</p>
             </div>
           </div>
         </div>
@@ -181,7 +200,7 @@
       <footer class="space-top">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-lg-3 mb-1">
+            <div class="col-md-6 col-lg-3 mb-2">
               <h2>Mavnew</h2>
               <p>
                 <small>
@@ -197,37 +216,37 @@
                 </small>
               </address>
             </div>
-            <div class="col-md-6 col-lg-2 mb-1">
+            <div class="col-md-6 col-lg-2 mb-2">
               <h3>Useful Links</h3>
               <ul>
                 <li>
                   <small>
-                    <i class="fas fa-angle-right"></i><a href=""> Home</a>
+                    <i class="fas fa-angle-right"></i><a href="/"> Home</a>
                   </small>
                 </li>
                 <li>
                   <small>
-                    <i class="fas fa-angle-right"></i> <a href="">About Us</a>
+                    <i class="fas fa-angle-right"></i> <a href="#about">About Us</a>
                   </small>
                 </li>
                 <li>
                   <small>
-                    <i class="fas fa-angle-right"></i> <a href="">Services</a>
+                    <i class="fas fa-angle-right"></i> <a href="#why-us">Services</a>
                   </small>
                 </li>
                 <li>
                   <small>
-                    <i class="fas fa-angle-right"></i> <a href="">Privacy Policy</a>
+                    <i class="fas fa-angle-right"></i> <a href="/privacy-policy">Privacy Policy</a>
                   </small>
                 </li>
                 <li>
                   <small>
-                    <i class="fas fa-angle-right"></i> <a href="">Affiliate Disclosure</a>
+                    <i class="fas fa-angle-right"></i> <a href="/affiliate-disclosure">Affiliate Disclosure</a>
                   </small>
                 </li>
               </ul>
             </div>
-            <div class="col-md-6 col-lg-3 mb-1">
+            <div class="col-md-6 col-lg-3 mb-2">
               <h3>Follow Us</h3>
               <address>
                 <p>Let us be social</p>
@@ -240,11 +259,11 @@
                   </small>
               </address>
             </div>
-            <div class="col-md-6 col-lg-4 mb-1">
+            <div class="col-md-6 col-lg-4 mb-2">
               <h3>Newsletter</h3>
               <p>
                 <small>
-                  Join our newsletter today to stay updated with our latest content and get our recommended skincare book for free. Not only should your body be fit, but it should also be smooth and well moisturized
+                  Join our newsletter today to stay updated with our latest content and get our recommended skincare book for free. Not only should your body be fit for your health, but it should also be smooth and well moisturized for an appealing look.
                 </small>
               </p>
               <form action="" method="POST">
@@ -262,7 +281,7 @@
           <small>
             MAVNEW &COPY; 2020 mavnew.com - All rights reserved.
           </small>
-          <div class="credit">Website Crafted By <a href="">Kehinde Yishawu</a></div>
+          <div class="credit">Website Crafted By <a href="https://www.instagram.com/f_kenny_f/">Kehinde Yishawu</a></div>
         </div>
       </footer>
     </div>

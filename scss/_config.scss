@@ -13,6 +13,10 @@ $large: 960px;
     margin-top: 125px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Merriweather', serif;
 }

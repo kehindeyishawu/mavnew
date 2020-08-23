@@ -1,9 +1,5 @@
 @import 'config';
 
-@mixin heading(){
-    margin-bottom: 48px;
-    color: darken($color: $second-color, $amount: 25px);
-}
 
 #home-banner{
     position: relative;
@@ -129,7 +125,7 @@
         }
     }
     p{
-        font-size: 13px;
+        font-size: 14px;
     }
     i{
         font-size: 30px;
@@ -139,7 +135,8 @@
 
 #blog{
     h2{
-        @include heading;
+        margin-bottom: 48px;
+        color: darken($color: $second-color, $amount: 25px);
         // text-align: center;
         // &::after{
         //     content: "";
