@@ -49,6 +49,21 @@ nav{
     }
 }
 
+#move-up{
+    position: sticky;
+    top: 80vh;
+    float: right;
+    color: $third-color;
+    background-color: darken($first-color, $amount: 4%);
+    padding: 7px 11px;
+    border-radius: 10px;
+    &:hover{
+        background-color: $second-color;
+        transition-property: background-color;
+        transition-duration: 300ms;
+    }
+}
+
 footer{
     background-color: $first-color;
     color: $third-color;
