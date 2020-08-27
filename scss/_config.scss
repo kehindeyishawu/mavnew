@@ -13,6 +13,14 @@ $large: 960px;
     margin-top: 125px;
 }
 
+.c-btn{
+    background-color: $first-color;
+}
+.c-bg{
+    background-color: $first-color;
+    color: white;
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -51,8 +59,8 @@ nav{
 
 #move-up{
     position: sticky;
-    top: 80vh;
-    float: right;
+    bottom: 30px;
+    left: 90%;
     color: $third-color;
     background-color: darken($first-color, $amount: 4%);
     padding: 7px 11px;

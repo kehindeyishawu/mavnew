@@ -26,3 +26,37 @@ section{
     margin-bottom: 30px;
     border-radius: 10px;
 }
+
+#top-pick{
+    position: relative;
+    .row{
+        border: 6px solid $first-color;
+        padding: 20px 0;
+    }
+    b{
+        a{
+            color: $fourth-color;
+        }
+    }
+    h2{
+        font-size: 18px;
+        position: absolute;
+        top: -40px;
+        left: -14px;
+        background-color: $fifth-color;
+        padding: 7px;
+        color: white;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: $medium){
+    .post-img{
+        height: 400px;
+    }
+}
+@media (max-width: $small){
+    .post-img{
+        height: 300px;
+    }
+}
