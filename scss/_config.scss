@@ -58,9 +58,9 @@ nav{
 }
 
 #move-up{
-    position: sticky;
+    position: fixed;
     bottom: 30px;
-    left: 90%;
+    left: 95%;
     color: $third-color;
     background-color: darken($first-color, $amount: 4%);
     padding: 7px 11px;
@@ -132,3 +132,14 @@ footer{
         }
     }
 }
+
+@media (max-width: $medium){
+    #move-up{
+        left: 85%;
+    }
+}
+// @media (max-width: $medium){
+//     #move-up{
+//         left: 70%;
+//     }
+// }

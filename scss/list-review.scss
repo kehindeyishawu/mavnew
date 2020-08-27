@@ -50,6 +50,20 @@ section{
     }
 }
 
+#product-list{
+    b{
+        color: $fourth-color;
+    }
+    .title{
+        background-color: $fifth-color;
+        color: white;
+    }
+    .product-detail{
+        font-size: 14px;
+        line-height: 140%;
+    }
+}
+
 @media (max-width: $medium){
     .post-img{
         height: 400px;
