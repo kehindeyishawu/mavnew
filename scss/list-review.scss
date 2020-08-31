@@ -94,6 +94,28 @@ section{
                 font-size: 24px;
             }
         }
+        .drawback{
+            border: #f5baba solid 1px;
+            background-color: #f9e5e5;
+        }
+        #myTab{
+            a{
+                color: white;
+                margin: 3px 0 0 3px;
+                &:hover{
+                    background-color: $third-color;
+                    color: $first-color;
+                }
+            }
+            .active{
+                color: black;
+            }
+        }
+        #myTabContent{
+            border: 3px solid $second-color;
+            border-top: 0;
+            padding: 10px;
+        }
     }
 }
 
