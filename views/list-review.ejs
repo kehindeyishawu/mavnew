@@ -5,15 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+    <meta name="description" content="<%= post.metaDesc %>">
 
     <!-- Bootstrap CSS, google fonts, font awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/034e494de5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/list-review.min.css">
+    <link rel="canonical" href="https://www.mavnew.com/list-review/<%- post.url %>">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/css/list-review.min.css">
 
-    <title>Mavnew-Test</title>
+    <title><%- post.name %> - Mavnew</title>
   </head>
   <body>
     <div id="wrapper">
@@ -24,19 +26,32 @@
               <small id="small-nav">
                 <a href="/">Home</a> > 
                 <a href="">List-review</a> > 
-                <span>Best Exercise Bike 2020 ejsss</span>
+                <span><%- post.name %></span>
               </small>
               <section>
-                <h1 class="mt-2">Best Exercise Bike 2020 - Buyer's Guide ejsss</h1>
-                <p><small class="text-muted">by <b>Kehinde Yishawu</b> | Last Updated <time datetime="2020-9-1">setember 1, 2020</time> </small></p>
-                <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:950/exercise-bike-rim-and-pedal.jpg" alt="" class="post-img">
-                <%- include(`partials/list-review/${url}.ejs`) %>
+                <h1 class="mt-2"><%- post.name %> - Buyer's Guide</h1>
+                <p><small class="text-muted">by <b>Kehinde Yishawu</b> | Updated <time datetime="2020-9-1">setember 1, 2020</time> </small></p>
+                <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:950/<%- post.postImg %>" alt="<%- post.postImgAlt %>" class="post-img">
+                <%- include(`partials/list-review/${post.url}.ejs`) %>
               </section>
             </div>
             <div class="col-lg-3 col-md-11">
               <section>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id velit vero laboriosam possimus veniam non impedit doloremque ipsam cupiditate ab!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, sapiente excepturi. Repellendus amet reiciendis adipisci sunt perspiciatis nihil sit ipsam commodi nulla dolor suscipit dicta praesentium vel, quod quam quisquam! Consequatur deleniti ea nihil voluptas molestias rem optio quos reprehenderit!
+                <!-- <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,h_270,q_auto,r_200,w_270/tife.jpg" alt="website owner" class="d-block mx-auto mt-4 mb-4"> -->
+                <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,h_270,q_auto,r_200,w_270/samples/people/kitchen-bar.jpg" alt="website owner" class="d-block mx-auto mt-5 mt-lg-4 mb-4">
+                <p class="text-center">
+                  <b>Hello!! My name is Kenny</b><br>
+                  <small class="text-muted">
+                    I love to sing, code, eat and sleep alot. I am software developer with an innovative mind. I love to think anything is possible once you set your mind in the right direction
+                  </small>
+                </p>
+                <address class="text-center">
+                    <a href="" title="Facebook" class="text-dark"><i class="fab fa-facebook-f mr-3"></i></a>
+                    <a href="" title="Twitter" class="text-dark"><i class="fab fa-twitter mr-3"></i></a>
+                    <a href="" title="Instagram" class="text-dark"><i class="fab fa-instagram mr-3"></i></a>
+                    <a href="" title="LinkedIn" class="text-dark"><i class="fab fa-linkedin mr-3"></i></a>
+                    <a href="" title="Pinterest" class="text-dark"><i class="fab fa-pinterest"></i></a>                
+                </address>
               </section>
             </div>
           </div>

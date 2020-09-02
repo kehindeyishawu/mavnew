@@ -1,5 +1,6 @@
 const express = require("express"),
-        router = express.Router();
+        router = express.Router(),
+        {Post} = require("./models");
 
 
 router.get("/", (req, res)=>{
@@ -19,8 +20,18 @@ router.get("/affiliate-disclosure", (req, res)=>{
 //     res.render(req.params.category)
 // })
 
-router.get("/list-review/:name", (req, res)=>{
-    res.render("list-review", {url: "best-exercise-bike"})
+router.get("/list-review/:url", (req, res)=>{
+    Post.findOne({url: req.params.url}, (err, post) => {
+        if(err || !post){
+            console.log(err, post)
+            return res.redirect("/page-not-found")
+        }
+        res.render("list-review", {post: post})
+    })
+})
+
+router.get("/page-not-found", (req, res) => {
+    res.send("page could not be found")
 })
 
 module.exports = router;
