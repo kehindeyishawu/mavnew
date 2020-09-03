@@ -18,25 +18,25 @@
     <title><%- post.name %> - Mavnew</title>
   </head>
   <body>
-    <div id="wrapper">
-      <%- include("partials/nav.ejs") %>
-        <div class="container-fluid mt-4">
-          <div class="row justify-content-center">
-            <div class="col-lg-7 col-md-11">
-              <small id="small-nav">
-                <a href="/">Home</a> > 
-                <a href="">List-review</a> > 
-                <span><%- post.name %></span>
-              </small>
-              <section>
-                <h1 class="mt-2"><%- post.name %> - Buyer's Guide</h1>
-                <p><small class="text-muted">by <b>Kehinde Yishawu</b> | Updated <time datetime="2020-9-1">setember 1, 2020</time> </small></p>
-                <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:950/<%- post.postImg %>" alt="<%- post.postImgAlt %>" class="post-img">
-                <%- include(`partials/list-review/${post.url}.ejs`) %>
-              </section>
-            </div>
-            <div class="col-lg-3 col-md-11">
-              <section>
+    <%- include("partials/nav.ejs") %>
+      <div class="container-fluid mt-4">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 col-md-11">
+            <small id="small-nav">
+              <a href="/">Home</a> > 
+              <a href="">List-review</a> > 
+              <span><%- post.name %></span>
+            </small>
+            <main>
+              <h1 class="mt-2"><%- post.name %> - Buyer's Guide</h1>
+              <p><small class="text-muted">by <b>Kehinde Yishawu</b> | Updated <time datetime="2020-9-1">setember 1, 2020</time> </small></p>
+              <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:950/<%- post.postImg %>" alt="<%- post.postImgAlt %>" class="post-img">
+              <%- include(`partials/list-review/${post.url}.ejs`) %>
+            </main>
+          </div>
+          <div class="col-lg-3 col-md-11">
+            <aside>
+              <article id="owner-info">
                 <!-- <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,h_270,q_auto,r_200,w_270/tife.jpg" alt="website owner" class="d-block mx-auto mt-4 mb-4"> -->
                 <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,h_270,q_auto,r_200,w_270/samples/people/kitchen-bar.jpg" alt="website owner" class="d-block mx-auto mt-5 mt-lg-4 mb-4">
                 <p class="text-center">
@@ -46,18 +46,26 @@
                   </small>
                 </p>
                 <address class="text-center">
-                    <a href="" title="Facebook" class="text-dark"><i class="fab fa-facebook-f mr-3"></i></a>
-                    <a href="" title="Twitter" class="text-dark"><i class="fab fa-twitter mr-3"></i></a>
-                    <a href="" title="Instagram" class="text-dark"><i class="fab fa-instagram mr-3"></i></a>
-                    <a href="" title="LinkedIn" class="text-dark"><i class="fab fa-linkedin mr-3"></i></a>
-                    <a href="" title="Pinterest" class="text-dark"><i class="fab fa-pinterest"></i></a>                
+                  <a href="" title="Facebook" class="text-dark"><i class="fab fa-facebook-f mr-3"></i></a>
+                  <a href="" title="Twitter" class="text-dark"><i class="fab fa-twitter mr-3"></i></a>
+                  <a href="" title="Instagram" class="text-dark"><i class="fab fa-instagram mr-3"></i></a>
+                  <a href="" title="LinkedIn" class="text-dark"><i class="fab fa-linkedin mr-3"></i></a>
+                  <a href="" title="Pinterest" class="text-dark"><i class="fab fa-pinterest"></i></a>                
                 </address>
-              </section>
-            </div>
+              </article>
+              <h2 class="mt-5 text-center text-lg-left pl-lg-5">Recent Posts</h2>
+              <ul class="list-unstyled text-center text-lg-left pl-lg-5">
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+              </ul>
+              <p class="text-center">Amazon ads</p>
+              <p class="text-center">Other Advertisement placement</p>
+            </aside>
           </div>
         </div>
-      <%- include("partials/footer.ejs") %>
-    </div>
+      </div>
+    <%- include("partials/footer.ejs") %>
 
     <!-- Optional JavaScript -->
     <script src="/js/list-review.js"></script>

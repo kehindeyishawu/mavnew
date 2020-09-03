@@ -17,7 +17,7 @@
     }
 }
 
-section{
+main{
     line-height: 160%;
 }
 
@@ -127,10 +127,11 @@ section{
     background-color: #fef5c4;
 }
 
-// .my-image{
-//     margin: auto;
-//     display: block;
-// }
+aside{
+    h2{
+        font-size: 23px;
+    }
+}
 
 @media (max-width: $medium){
     .post-img{
