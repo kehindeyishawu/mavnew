@@ -24,6 +24,15 @@ $large: 960px;
     color: white;
 }
 
+.custom-link{
+    color: $fourth-color;
+    transition: color 500ms;
+    &:hover{
+        text-decoration: none;
+        color: black;
+    } 
+}
+
 html{
     scroll-behavior: smooth;
 }

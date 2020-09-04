@@ -127,11 +127,23 @@ main{
     background-color: #fef5c4;
 }
 
-aside{
+#owner-info{
+    h2{
+        font-size: 1rem;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+#recent-post{
     h2{
         font-size: 23px;
     }
+    li{
+        line-height: 220%;
+    }
 }
+
 
 @media (max-width: $medium){
     .post-img{
