@@ -21,7 +21,7 @@ router.get("/:category/:url", (req, res) => {
     Post.find({}, (err, allPost) => {
         if(err || !allPost){
             console.log(err, allPost)
-            return res.redirect("/page-not-found")
+            return res.status(404).render("not-found")
         }
         allPost.forEach(e => {
             if(e.category === req.params.category && e.url === req.params.url){
@@ -30,6 +30,9 @@ router.get("/:category/:url", (req, res) => {
                 otherPost.push(e)
             }
         })
+        if(!pagePost){
+           return res.status(404).render("not-found")
+        }
         res.locals.recent = otherPost.reverse()
         res.render(req.params.category, {post: pagePost})
     })
@@ -44,9 +47,5 @@ router.get("/:category/:url", (req, res) => {
 //         res.render("list-review", {post: post})
 //     })
 // })
-
-router.get("/page-not-found", (req, res) => {
-    res.send("page could not be found")
-})
 
 module.exports = router;

@@ -77,10 +77,12 @@ nav{
     background-color: darken($first-color, $amount: 4%);
     padding: 7px 11px;
     border-radius: 10px;
+    opacity: 0.5;
+    z-index: 1;
     &:hover{
-        background-color: $second-color;
-        transition-property: background-color;
-        transition-duration: 300ms;
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 400ms;
     }
 }
 
@@ -150,8 +152,3 @@ footer{
         left: 85%;
     }
 }
-// @media (max-width: $medium){
-//     #move-up{
-//         left: 70%;
-//     }
-// }
