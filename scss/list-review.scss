@@ -129,6 +129,10 @@ main{
 .summary{
     border: 1px solid #90b8e0;
     background-color: #e2f0fc;
+    a{
+        width: 50%;
+        min-width: 280px;
+    }
 }
 
 .video-container{
