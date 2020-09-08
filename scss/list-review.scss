@@ -89,9 +89,10 @@ main{
                 transition-duration: 1000ms;
             }
         }
-        h3{
-            font-size: 24px;
-        }
+    }
+    .benefit{
+        font-size: 22px;
+        padding-left: 2em;
     }
     #myTab{
         a{
@@ -115,6 +116,11 @@ main{
         border: 3px solid #6c757d;
         border-top: 0;
         padding: 16px 5px 5px 15px;
+    }
+    .pros-cons{
+        h3{
+            font-size: 22px;
+        }
     }
 }
 
