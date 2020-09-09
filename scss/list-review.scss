@@ -76,9 +76,10 @@ main{
 
 
 .product{
+    margin-bottom: 125px;
     .container{
         h2{
-            font-size: 26px;
+            font-size: 25px;
         }
         a{
             color: $fourth-color;
@@ -94,7 +95,7 @@ main{
         font-size: 22px;
         padding-left: 2em;
     }
-    #myTab{
+    .nav-tabs{
         a{
             color: white;
             margin: 3px 0 0 3px;
@@ -112,14 +113,14 @@ main{
             }
         }
     }
-    #myTabContent{
+    .tab-content{
         border: 3px solid #6c757d;
         border-top: 0;
         padding: 16px 5px 5px 15px;
     }
     .pros-cons{
         h3{
-            font-size: 22px;
+            font-size: 24px;
         }
     }
 }
