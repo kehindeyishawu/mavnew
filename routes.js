@@ -4,48 +4,62 @@ const express = require("express"),
 
 
 router.get("/", (req, res)=>{
-    res.render("home")
+    res.render("pages/home")
 })
 
 router.get("/privacy-policy", (req, res)=>{
-    res.render("privacy-policy")
+    res.render("pages/privacy-policy")
 })
 
 router.get("/affiliate-disclosure", (req, res)=>{
-    res.render("affiliate-disclosure")
+    res.render("pages/affiliate-disclosure")
 })
 
-router.get("/:category/:url", (req, res) => {
+// router.get("/:category/:url", (req, res) => {
+//     let otherPost = []
+//     let pagePost;
+//     Post.find({}, (err, allPost) => {
+//         if(err || !allPost){
+//             console.log(err, allPost)
+//             return res.status(404).render("not-found")
+//         }
+//         allPost.forEach(e => {
+//             if(e.category === req.params.category && e.url === req.params.url){
+//                 pagePost = e
+//             }else{
+//                 otherPost.push(e)
+//             }
+//         })
+//         if(!pagePost){
+//            return res.status(404).render("not-found")
+//         }
+//         res.locals.recent = otherPost.reverse()
+//         res.render(req.params.category, {post: pagePost})
+//     })
+// })
+
+router.get("/list-review/:url", (req, res)=>{
     let otherPost = []
     let pagePost;
     Post.find({}, (err, allPost) => {
         if(err || !allPost){
-            console.log(err, allPost)
-            return res.status(404).render("not-found")
+            console.log(err || "posts were not found")
+            return res.status(404).render("pages/not-found")
         }
         allPost.forEach(e => {
-            if(e.category === req.params.category && e.url === req.params.url){
+            if(e.category === "list-review" && e.url === req.params.url){
                 pagePost = e
             }else{
                 otherPost.push(e)
             }
         })
         if(!pagePost){
-           return res.status(404).render("not-found")
+           return res.status(404).render("pages/not-found")
         }
         res.locals.recent = otherPost.reverse()
-        res.render(req.params.category, {post: pagePost})
+        res.render("pages/list-review", {post: pagePost})
     })
 })
 
-// router.get("/list-review/:url", (req, res)=>{
-//     Post.findOne({url: req.params.url}, (err, post) => {
-//         if(err || !post){
-//             console.log(err, post)
-//             return res.redirect("/page-not-found")
-//         }
-//         res.render("list-review", {post: post})
-//     })
-// })
 
 module.exports = router;

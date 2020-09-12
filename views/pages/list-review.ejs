@@ -18,7 +18,7 @@
     <title><%- post.name %> - Mavnew</title>
   </head>
   <body>
-    <%- include("partials/nav.ejs") %>
+    <%- include("../partials/nav.ejs") %>
       <div class="container-fluid mt-4">
         <div class="row justify-content-center">
           <main class="col-lg-7 col-md-11">
@@ -34,7 +34,7 @@
               </header>
               <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:950/<%- post.postImg %>" alt="<%- post.postImgAlt %>" class="post-img d-md-block d-none">
               <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:500/<%- post.postImg %>" alt="<%- post.postImgAlt %>" class="post-img d-md-none">
-              <%- include(`partials/list-review/${post.url}.ejs`) %>
+              <%- include(`../posts/list-review/${post.url}.ejs`) %>
             </article>
           </main>
           <aside class="col-lg-3 col-md-11">
@@ -68,7 +68,7 @@
           </aside>
         </div>
       </div>
-    <%- include("partials/footer.ejs") %>
+    <%- include("../partials/footer.ejs") %>
 
     <!-- Optional JavaScript -->
     <script src="/js/list-review.js"></script>

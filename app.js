@@ -20,19 +20,12 @@ mongoose.connect(process.env.DB_URL, {
 const routes = require("./routes.js");
 
 
-// Post.find({}, (err, posts) => {
-//     if(err){
-//         return console.log(err.message)
-//     }
-//     console.log(posts)
-// })
-
 // Using routes
 app.use(routes)
 
 // 404 route
 app.use((req, res, next)=>{
-    res.status(404).render("not-found")
+    res.status(404).render("pages/not-found")
 })
 
 // start server
