@@ -20,7 +20,6 @@
 main{
     line-height: 160%;
     p{
-        font-size: 17px;
         margin-bottom: 1.5rem;
     }
     h4{
@@ -56,6 +55,9 @@ main{
         padding: 7px;
         color: white;
         border-radius: 4px;
+    }
+    p{
+        margin-bottom: 1rem;
     }
 }
 
