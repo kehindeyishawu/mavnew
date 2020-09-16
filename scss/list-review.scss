@@ -26,6 +26,57 @@ main{
         font-size: 18px;
         font-weight: bold;
     }
+    #social-share{
+        display: flex;
+        position: fixed;
+        bottom: 33%;
+        left: 0;
+        width: 45px;
+        flex-direction: column;
+        a{
+            color:white;
+        }
+        div{
+            flex: 1;
+            padding: 10px 0;
+            margin-bottom: 2px;
+            &:nth-of-type(2){
+                background-color: #415bac;
+                &:hover{
+                    transition: background-color 500ms;
+                    background-color: darken($color: #415bac, $amount: 10px);
+                }
+            }
+            &:nth-of-type(3){
+                background-color: #20abe4;
+                &:hover{
+                    transition: background-color 500ms;
+                    background-color: darken($color: #20abe4, $amount: 10px);
+                }
+            }
+            &:nth-of-type(4){
+                background-color: #d30921;
+                &:hover{
+                    transition: background-color 500ms;
+                    background-color: darken($color: #d30921, $amount: 10px);
+                }
+            }
+            &:nth-of-type(5){
+                background-color: #415bac;
+                &:hover{
+                    transition: background-color 500ms;
+                    background-color: darken($color: #415bac, $amount: 10px);
+                }
+            }
+            &:nth-of-type(6){
+                background-color: green;
+                &:hover{
+                    transition: background-color 500ms;
+                    background-color: darken($color: green, $amount: 10px);
+                }
+            }
+        }
+    }
 }
 
 .post-img{
@@ -194,6 +245,15 @@ main{
     }
 }
 
+.infograph{
+    padding: 0 25px;
+    img{
+        max-height: 800px;
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
 @media (max-width: $medium){
     .post-img{
         height: 400px;
@@ -208,6 +268,15 @@ main{
             a{
                 margin-right: 3px;
             }
+        }
+    }
+    main{
+        #social-share{
+            position: sticky;
+            flex-direction: row;
+            width: 100%;
+            bottom: -1px;
+            margin-bottom: -1px;
         }
     }
 }

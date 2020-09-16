@@ -86,7 +86,7 @@ nav{
     }
 }
 
-footer{
+#footer{
     background-color: $first-color;
     color: $third-color;
     padding-top: 60px;
@@ -150,5 +150,6 @@ footer{
 @media (max-width: $medium){
     #move-up{
         left: 85%;
+        bottom: 10%;
     }
 }
