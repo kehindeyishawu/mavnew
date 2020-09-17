@@ -1,5 +1,10 @@
 @import "config";
 
+.slide-up {
+  opacity: 0;
+  transform: translateY(10vh);
+}
+
 #small-nav {
   font-weight: 700;
   span {
@@ -7,11 +12,11 @@
   }
   a {
     color: $first-color;
+    transition-property: color;
+    transition-duration: 400ms;
     &:hover {
       text-decoration: none;
       color: $fourth-color;
-      transition-property: color;
-      transition-duration: 400ms;
     }
   }
 }
@@ -26,9 +31,11 @@ main {
     font-weight: bold;
   }
   #social-share {
+    transition-property: opacity, transform;
+    transition-duration: 500ms;
     display: flex;
     position: fixed;
-    bottom: 33%;
+    bottom: 30vh;
     left: 0;
     width: 45px;
     flex-direction: column;
@@ -41,36 +48,36 @@ main {
       margin-bottom: 2px;
       &:nth-of-type(2) {
         background-color: #415bac;
+        transition: background-color 500ms;
         &:hover {
-          transition: background-color 500ms;
           background-color: darken($color: #415bac, $amount: 15px);
         }
       }
       &:nth-of-type(3) {
         background-color: #20abe4;
+        transition: background-color 500ms;
         &:hover {
-          transition: background-color 500ms;
           background-color: darken($color: #20abe4, $amount: 15px);
         }
       }
       &:nth-of-type(4) {
         background-color: #d30921;
+        transition: background-color 500ms;
         &:hover {
-          transition: background-color 500ms;
           background-color: darken($color: #d30921, $amount: 15px);
         }
       }
       &:nth-of-type(5) {
         background-color: #415bac;
+        transition: background-color 500ms;
         &:hover {
-          transition: background-color 500ms;
           background-color: darken($color: #415bac, $amount: 15px);
         }
       }
       &:nth-of-type(6) {
         background-color: green;
+        transition: background-color 500ms;
         &:hover {
-          transition: background-color 500ms;
           background-color: darken($color: green, $amount: 15px);
         }
       }
@@ -142,11 +149,11 @@ main {
     }
     a {
       color: $fourth-color;
+      transition-property: color;
+      transition-duration: 1000ms;
       &:hover {
         text-decoration: none;
         color: $first-color;
-        transition-property: color;
-        transition-duration: 1000ms;
       }
     }
   }
@@ -272,7 +279,7 @@ main {
     #social-share {
       flex-direction: row;
       width: 100%;
-      bottom: -1vh;
+      bottom: -0.5vh;
     }
   }
 }
