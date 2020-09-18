@@ -4,17 +4,32 @@ const hideContent = document.querySelector(".page-content");
 const share = document.querySelector("#social-share");
 const cursor = document.querySelector("#move-up");
 const h1 = document.querySelector("h1");
+const postFooter = document.querySelector("#post-footer");
+const footer = document.querySelector("#footer");
+const aside = document.querySelector("#aside");
 
 const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((e) => {
-    if (e.target === h1) {
-      cursor.classList.toggle("disappear");
-      share.classList.toggle("slide-up");
+  entries.forEach(async (e) => {
+    if ((e.target === postFooter || e.target === footer) && e.isIntersecting) {
+      share.classList.add("hide");
+    }
+    if ((e.target === postFooter || e.target === footer) && !e.isIntersecting) {
+      share.classList.remove("hide");
+    }
+    if (e.target === h1 && e.isIntersecting) {
+      cursor.classList.add("disappear");
+      share.classList.remove("slide-up");
+    }
+    if (e.target === h1 && !e.isIntersecting) {
+      cursor.classList.remove("disappear");
+      share.classList.add("slide-up");
     }
   });
 }, {});
 
 observer.observe(h1);
+observer.observe(postFooter);
+observer.observe(footer);
 
 pageContent.addEventListener("click", () => {
   if (collapse.classList.length === 2) {

@@ -1,10 +1,12 @@
 @import "config";
 
 .slide-up {
-  opacity: 0;
-  transform: translateY(10vh);
+  opacity: 1 !important;
+  transform: translateY(-9.5vh);
 }
-
+.hide {
+  visibility: hidden;
+}
 #small-nav {
   font-weight: 700;
   span {
@@ -39,6 +41,7 @@ main {
     left: 0;
     width: 45px;
     flex-direction: column;
+    opacity: 0;
     a {
       color: white;
     }
@@ -279,7 +282,7 @@ main {
     #social-share {
       flex-direction: row;
       width: 100%;
-      bottom: -0.5vh;
+      bottom: -10vh;
     }
   }
 }
