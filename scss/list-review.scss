@@ -2,8 +2,7 @@
 
 .slide-up {
   opacity: 1 !important;
-  // transform: translateY(-9.5vh);
-  transform: translateY(-9vh);
+  transform: translateY(-8vh);
 }
 .hide {
   visibility: hidden;
@@ -283,7 +282,7 @@ main {
     #social-share {
       flex-direction: row;
       width: 100%;
-      bottom: -11vh;
+      bottom: -10vh;
     }
   }
 }
