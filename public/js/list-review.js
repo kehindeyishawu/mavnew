@@ -10,10 +10,19 @@ const aside = document.querySelector("#aside");
 
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(async (e) => {
-    if ((e.target === postFooter || e.target === footer) && e.isIntersecting) {
+    // if ((e.target === postFooter || e.target === footer) && e.isIntersecting) {
+    //   share.classList.add("hide");
+    // }
+    // if ((e.target === postFooter || e.target === footer) && !e.isIntersecting) {
+    //   share.classList.remove("hide");
+    // }
+    if (e.target === footer && e.isIntersecting) {
       share.classList.add("hide");
     }
-    if ((e.target === postFooter || e.target === footer) && !e.isIntersecting) {
+    if (e.target === postFooter && e.isIntersecting) {
+      share.classList.add("hide");
+    }
+    if (e.target === postFooter && !e.isIntersecting) {
       share.classList.remove("hide");
     }
     if (e.target === h1 && e.isIntersecting) {
@@ -24,6 +33,7 @@ const observer = new IntersectionObserver((entries, observer) => {
       cursor.classList.remove("disappear");
       share.classList.add("slide-up");
     }
+    // target ads or ignore when in mobile viewport and add the class hide. write it in the code below
   });
 }, {});
 
