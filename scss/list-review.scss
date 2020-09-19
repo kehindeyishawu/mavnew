@@ -3,7 +3,6 @@
 .slide-up {
   opacity: 1 !important;
   transform: translateY(-10vh);
-  margin-bottom: -1vh;
 }
 .hide {
   visibility: hidden;
@@ -284,6 +283,7 @@ main {
       flex-direction: row;
       width: 100%;
       bottom: -10vh;
+      margin-bottom: -0.4vh;
     }
   }
 }
