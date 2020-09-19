@@ -33,7 +33,7 @@ const observer = new IntersectionObserver((entries, observer) => {
       cursor.classList.remove("disappear");
       share.classList.add("slide-up");
     }
-    // target ads or ignore when in mobile viewport and add the class hide. write it in the code below
+    // target ads or ignore when in mobile viewport and add the class hide. write it in the code below and threshold could be 0.5-1
   });
 }, {});
 
