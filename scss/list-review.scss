@@ -3,6 +3,7 @@
 .slide-up {
   opacity: 1 !important;
   transform: translateY(-8vh);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 .hide {
   visibility: hidden;
@@ -33,7 +34,6 @@ main {
     font-weight: bold;
   }
   #social-share {
-    -webkit-transform: translate3d(0, 0, 0);
     transition-property: opacity, transform;
     transition-duration: 500ms;
     display: flex;
