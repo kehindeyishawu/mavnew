@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const crypto = require("crypto");
 
 // schemas
 const postSchema = new mongoose.Schema({
@@ -20,9 +21,16 @@ const postSchema = new mongoose.Schema({
   category: String,
 });
 
+const newsletter = new mongoose.Schema({
+  email: String,
+  emailToken: { type: String, default: crypto.randomBytes(64).toString("hex") },
+  isVerified: { type: Boolean, default: false },
+});
+
 // collection object
 const collection = {
   Post: mongoose.model("Post", postSchema),
+  Newsletter: mongoose.model("Newsletter", newsletter),
 };
 
 // collection.Post.create({

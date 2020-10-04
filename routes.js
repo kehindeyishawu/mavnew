@@ -1,65 +1,74 @@
 const express = require("express"),
-        router = express.Router(),
-        {Post} = require("./models");
+  router = express.Router(),
+  axios = require("axios").default,
+  { Post, Newsletter } = require("./models");
 
+require("dotenv").config(); // env variables
+const sendinblue = axios.create({
+  baseURL: "https://api.sendinblue.com/v3",
+  headers: {
+    "api-key": process.env.SENDINBLUE_API_KEY,
+  },
+  timeout: 10000,
+});
 
-router.get("/", (req, res)=>{
-    res.render("pages/home")
-})
+sendinblue
+  .post("/contacts", {
+    email: "kevinyishawu@gmail.com",
+    attributes: {
+      firstname: "Kehinde",
+      lastname: "Yishawu",
+      sms: "+2348067362005",
+    },
+    listIds: [5],
+    updateEnabled: false,
+  })
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log(err.status, err.data);
+  });
 
-router.get("/privacy-policy", (req, res)=>{
-    res.render("pages/privacy-policy")
-})
+router.get("/", (req, res) => {
+  res.render("pages/home");
+});
 
-router.get("/affiliate-disclosure", (req, res)=>{
-    res.render("pages/affiliate-disclosure")
-})
+router.get("/privacy-policy", (req, res) => {
+  res.render("pages/privacy-policy");
+});
 
-// router.get("/:category/:url", (req, res) => {
-//     let otherPost = []
-//     let pagePost;
-//     Post.find({}, (err, allPost) => {
-//         if(err || !allPost){
-//             console.log(err, allPost)
-//             return res.status(404).render("not-found")
-//         }
-//         allPost.forEach(e => {
-//             if(e.category === req.params.category && e.url === req.params.url){
-//                 pagePost = e
-//             }else{
-//                 otherPost.push(e)
-//             }
-//         })
-//         if(!pagePost){
-//            return res.status(404).render("not-found")
-//         }
-//         res.locals.recent = otherPost.reverse()
-//         res.render(req.params.category, {post: pagePost})
-//     })
-// })
+router.get("/affiliate-disclosure", (req, res) => {
+  res.render("pages/affiliate-disclosure");
+});
 
-router.get("/list-review/:url", (req, res)=>{
-    let otherPost = []
-    let pagePost;
-    Post.find({}, (err, allPost) => {
-        if(err || !allPost){
-            console.log(err || "posts were not found")
-            return res.status(404).render("pages/not-found")
-        }
-        allPost.forEach(e => {
-            if(e.category === "list-review" && e.url === req.params.url){
-                pagePost = e
-            }else{
-                otherPost.push(e)
-            }
-        })
-        if(!pagePost){
-           return res.status(404).render("pages/not-found")
-        }
-        res.locals.recent = otherPost.reverse()
-        res.render("pages/list-review", {post: pagePost})
-    })
-})
+router.post("/api/newsletter", (req, res) => {
+  // set up sendinblue functionalities later
+  console.log(req.body);
+  res.sendStatus(201);
+});
 
+router.get("/list-review/:url", (req, res) => {
+  let otherPost = [];
+  let pagePost;
+  Post.find({}, (err, allPost) => {
+    if (err || !allPost) {
+      console.log(err || "posts were not found");
+      return res.status(404).render("pages/not-found");
+    }
+    allPost.forEach((e) => {
+      if (e.category === "list-review" && e.url === req.params.url) {
+        pagePost = e;
+      } else {
+        otherPost.push(e);
+      }
+    });
+    if (!pagePost) {
+      return res.status(404).render("pages/not-found");
+    }
+    res.locals.recent = otherPost.reverse();
+    res.render("pages/list-review", { post: pagePost });
+  });
+});
 
 module.exports = router;

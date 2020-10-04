@@ -262,6 +262,15 @@ main {
   }
 }
 
+#post-newsletter {
+  .sub-content {
+    background-color: $third-color;
+  }
+  input {
+    box-shadow: none;
+  }
+}
+
 @media (max-width: $medium) {
   .post-img {
     height: 400px;

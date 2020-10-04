@@ -35,7 +35,7 @@
               <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:950/<%- post.postImg %>" alt="<%- post.postImgAlt %>" class="post-img d-md-block d-none">
               <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:500/<%- post.postImg %>" alt="<%- post.postImgAlt %>" class="post-img d-md-none">
               <%- include(`../posts/list-review/${post.url}.ejs`) %>
-              <footer id="post-footer">
+              <footer id="post-footer" class="space-top">
                 <div id="social-share" class="text-center">
                   <div class="d-none d-md-block">
                     <i class="fas fa-share-alt"></i>
@@ -54,6 +54,33 @@
                   </div>
                   <div>
                     <a href=""><i class="fab fa-whatsapp"></i></a>
+                  </div>
+                </div>
+                <div class="row" id="post-newsletter">
+                  <div class="col-md-4 pr-md-0 d-none d-md-block">
+                    <img src="https://res.cloudinary.com/mavnew/c_scale,w_500/icon3.jpg" alt="woman with a lovely skin and skincare routine" class="img-fluid h-100">
+                  </div>
+                  <div class="col-md-8 p-4 pb-0 sub-content">
+                    <h2 class="text-center">Subscribe To Newsletter</h2>
+                    <p>
+                      Get the latest updates from our Newsletter on fitness tips and posts. When you subscribe to our newsletter, you also get our free skincare ebook for a smooth and silky skin.
+                    </p>
+                    <P>
+                      Not only should your body be fit, but we also encourage having a smooth and well moisturized skin with a robust skincare routine.
+                    </P>
+                    <form class="container">
+                      <label for="post-email">Enter your email:</label>
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <input type="email" id="post-email" name="email" class="form-control" required>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <button class="btn btn-warning">Subscribe</button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </footer>
@@ -93,6 +120,7 @@
     <%- include("../partials/footer.ejs") %>
 
     <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/list-review.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
