@@ -1,6 +1,7 @@
 const express = require("express"),
   router = express.Router(),
   axios = require("axios").default,
+  crypto = require("crypto"),
   { Post, Newsletter } = require("./models");
 
 require("dotenv").config(); // env variables
@@ -9,26 +10,43 @@ const sendinblue = axios.create({
   headers: {
     "api-key": process.env.SENDINBLUE_API_KEY,
   },
-  timeout: 10000,
+  timeout: 7000,
 });
 
-sendinblue
-  .post("/contacts", {
-    email: "kevinyishawu@gmail.com",
-    attributes: {
-      firstname: "Kehinde",
-      lastname: "Yishawu",
-      sms: "+2348067362005",
-    },
-    listIds: [5],
-    updateEnabled: false,
-  })
-  .then((res) => {
-    console.log(res.data);
-  })
-  .catch((err) => {
-    console.log(err.status, err.data);
-  });
+router.post("/newsletter", (req, res) => {
+  // set up sendinblue functionalities later
+  let auth = crypto.randomBytes(15).toString("hex");
+
+  sendinblue
+    .post("/contacts", {
+      email: req.body.email,
+      attributes: {
+        token: auth,
+      },
+      listIds: [5],
+      updateEnabled: false,
+    })
+    .then((response) => {
+      res.sendStatus(201);
+      console.log("contact created");
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.status);
+        console.log(error.response.data);
+        res.sendStatus(500);
+      } else if (error.request) {
+        console.log(error.request.status);
+        console.log(error.request.data);
+        res.sendStatus(504);
+      }
+      console.log("Error: something went wrong");
+    });
+});
+
+router.get("/newsletter/:token", (req, res) => {
+  // configure a mongoose random string schema
+});
 
 router.get("/", (req, res) => {
   res.render("pages/home");
@@ -40,12 +58,6 @@ router.get("/privacy-policy", (req, res) => {
 
 router.get("/affiliate-disclosure", (req, res) => {
   res.render("pages/affiliate-disclosure");
-});
-
-router.post("/api/newsletter", (req, res) => {
-  // set up sendinblue functionalities later
-  console.log(req.body);
-  res.sendStatus(201);
 });
 
 router.get("/list-review/:url", (req, res) => {

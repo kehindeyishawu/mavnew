@@ -12,7 +12,7 @@ const postLetter = document.querySelector("#post-footer form");
 const formField = document.querySelector("#footer input");
 const postField = document.querySelector("#post-footer input");
 
-axios.defaults.timeout = 5000;
+axios.defaults.timeout = 10000;
 
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(async (e) => {
@@ -65,7 +65,7 @@ newsletter.onsubmit = () => {
   document.querySelector("#footer button").innerHTML =
     "<div class='spinner-border spinner-border-sm' role='status'><span class='sr-only'>loading...</span><div>";
   axios
-    .post("/api/newsletter", {
+    .post("/newsletter", {
       email: formField.value,
     })
     .then((res) => {
@@ -73,8 +73,11 @@ newsletter.onsubmit = () => {
       newsletter.outerHTML = `A confirmation email has been sent to your inbox`;
     })
     .catch((err) => {
-      newsletter.outerHTML =
-        "<span class='text-danger'>Subscription failed!! try again later</span>";
+      document.querySelector("#footer .res").textContent =
+        "Subscription failed!! try again later";
+      document.querySelector(
+        "#footer button"
+      ).outerHTML = `<button class="btn btn-dark px-3"><i class="fas fa-chevron-right"></i></button>`;
       if (err.response) {
         console.log(err.response.status);
         console.log(err.response.header);
@@ -98,7 +101,7 @@ postLetter.onsubmit = () => {
   document.querySelector("#post-footer button").innerHTML =
     "<div class='spinner-border spinner-border-sm' role='status'><span class='sr-only'>loading...</span><div>";
   axios
-    .post("/api/newsletter", {
+    .post("/newsletter", {
       email: postField.value,
     })
     .then((res) => {
@@ -106,8 +109,11 @@ postLetter.onsubmit = () => {
       postLetter.outerHTML = `A confirmation email has been sent to your inbox`;
     })
     .catch((err) => {
-      postLetter.outerHTML =
-        "<span class='text-danger'>Subscription failed!! try again later</span>";
+      document.querySelector("#post-footer .res").textContent =
+        "Subscription failed!! try again later";
+      document.querySelector(
+        "#post-footer button"
+      ).outerHTML = `<button class="btn btn-warning">Subscribe</button>`;
       if (err.response) {
         console.log(err.response.status);
         console.log(err.response.header);
