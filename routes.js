@@ -58,7 +58,7 @@ router.get("/newsletter/:token", (req, res) => {
       "<div style='text-align:center;'><h1>Welcome to our Newsletter</h1><p>An email of your free ebook will be sent to you shortly</p><div>"
     );
     // res.download("./sendinblue.txt");
-    Newsletter.deleteOne({ email: req.params.token });
+    // Newsletter.deleteOne({ email: req.params.token });
   });
 });
 
@@ -72,6 +72,10 @@ router.get("/privacy-policy", (req, res) => {
 
 router.get("/affiliate-disclosure", (req, res) => {
   res.render("pages/affiliate-disclosure");
+});
+
+router.get("/contact", (req, res) => {
+  res.render("pages/contact");
 });
 
 router.get("/list-review/:url", (req, res) => {

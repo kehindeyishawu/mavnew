@@ -24,7 +24,7 @@ const postSchema = new mongoose.Schema({
 const newsletter = new mongoose.Schema({
   email: String,
   emailToken: { type: String, default: crypto.randomBytes(64).toString("hex") },
-  expireAt: { type: Date, default: Date.now, expires: "3d" },
+  expireAt: { type: Date, default: Date.now, expires: "48h" },
 });
 
 // collection object
@@ -33,6 +33,15 @@ const collection = {
   Newsletter: mongoose.model("Newsletter", newsletter),
 };
 
+// collection.Newsletter.create(
+//   { email: "should expire in 2days" },
+//   (err, data) => {
+//     if (err) {
+//       return console.log(err);
+//     }
+//     console.log(data);
+//   }
+// );
 // collection.Post.create({
 //     name: "Best Recumbent Bike 2020",
 //     postImg: "exercise-bike-rim-and-pedal.jpg",
