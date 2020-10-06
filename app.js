@@ -3,6 +3,8 @@ const express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
   bodyParser = require("body-parser"),
+  session = require("express-session"),
+  flash = require("connect-flash"),
   routes = require("./routes.js"); // requiring routes
 
 app.use(express.static(__dirname + "/public"));
@@ -26,7 +28,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // after session packages config
+app.use(
+  session({
+    secret: "money is good always",
+    saveUninitialized: false,
+    resave: false,
+  })
+);
 
+app.use(flash());
+// setting global variables to display within pages
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
 // Using routes
 app.use(routes);
 

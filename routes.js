@@ -75,7 +75,44 @@ router.get("/affiliate-disclosure", (req, res) => {
 });
 
 router.get("/contact", (req, res) => {
-  res.render("pages/contact");
+  Post.find({}, (err, allPost) => {
+    if (err || !allPost) {
+      console.log(err || "posts were not found");
+      return res.status(404).render("pages/not-found");
+    }
+    res.locals.recent = allPost.reverse();
+    res.render("pages/contact");
+  });
+});
+
+router.post("/contact", (req, res) => {
+  sendinblue
+    .post("/smtp/email", {
+      sender: {
+        name: "Mavnew Contact Form",
+        email: "no-reply@mavnew.com",
+      },
+      to: [{ email: "rosaryfirm@gmail.com" }],
+      htmlContent: `<h3>Sender name and email: ${req.body.contactName} & ${req.body.contactEmail}</h3><p>${req.body.contactMessage}</p>`,
+      textContent: `Sender name and email: ${req.body.contactName} & ${req.body.contactEmail}.        ${req.body.contactMessage}`,
+      subject: req.body.contactSubject || "No subject",
+      replyTo: { email: req.body.contactEmail, name: req.body.contactName },
+    })
+    .then(() => {
+      req.flash(
+        "success",
+        "Your message has been sent, we will get back to you shortly."
+      );
+      res.redirect("/contact");
+    })
+    .catch((error) => {
+      req.flash(
+        "error",
+        "Error: Your message failed to send!! Please try again later."
+      );
+      res.redirect("/contact");
+      console.log(error);
+    });
 });
 
 router.get("/list-review/:url", (req, res) => {

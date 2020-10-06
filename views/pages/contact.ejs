@@ -12,15 +12,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/034e494de5.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/css/contact.min.css">
     <link rel="canonical" href="https://www.mavnew.com/contact">
 
-    <title>Mavnew-Test</title>
+    <title>Contact</title>
   </head>
   <body>
       <%- include("../partials/nav.ejs") %>
-      <main>
-        This is the test template
-      </main>
+      <div class="container-fluid">
+        <div class="row justify-content-center space-top-sm">
+          <main class="col-md-10 col-lg-7 mr-lg-5">
+            <h1 class="mb-4">Contact</h1>
+            <p>
+              Do you need help with anything or just want to leave a feedback. Please do not hesistate to contact us. We would make sure to respond as soon as we can.
+            </p>
+            <form action="/contact" method="POST" class="mt-5">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label> <span class="text-danger">*</span>
+                <input type="text" class="form-control" name="contactName" id="contact-name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Your Email</label> <span class="text-danger">*</span>
+                <input type="email" class="form-control" name="contactEmail" id="contact-email" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" class="form-control" name="contactSubject" id="contact-subject">
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Enter your message</label> <span class="text-danger">*</span>
+                <textarea class="form-control" name="contactMessage" id="contact-message" rows="10" required></textarea>
+              </div>
+              <button class="btn btn-dark">Send Message</button>
+            </form>
+          </main>
+          <aside class="col-md-10 col-lg-3">
+            <!-- <h4>Popular Posts</h4>
+            <ul class="list-unstyled">
+              <li>Lorem ipsum dolor sit amet uhghghghfdj.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+            </ul> -->
+            <h4 class="mt-5">Recent Posts</h4>
+            <ul class="list-unstyled">
+              <% for(const e of recent){ %>
+                <li><a href="<%= e.url %>" class="custom-link"><%= e.name %></a></li>
+              <%}%>
+            </ul>
+            <hr>
+            <div>
+              Ads placements
+            </div>
+          </aside>
+        </div>
+      </div>
       <%- include("../partials/footer.ejs") %>
 
     <!-- Optional JavaScript -->

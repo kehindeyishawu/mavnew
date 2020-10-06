@@ -91,6 +91,24 @@
             </div>
           </div>
         </nav>
+        
+        <!-- flash messages -->
+        <%if(success && success.length > 0){%>
+          <div>
+            <div class="alert alert-success mb-0" role="alert">
+              <%=success%>
+              <span class="sr-only">A green background signifying success</span>
+            </div>
+          </div>
+        <%}else if(error && error.length > 0){%>
+          <div>
+            <div class="alert alert-danger mb-0" role="alert">
+              <%=error%>
+              <span class="sr-only">A red background signifying error or Something went wrong</span>
+            </div>
+          </div>
+        <%}%>
+        <!-- ********** flash messages above-->
 
         <!-- home banner -->
         <section id="home-banner">
@@ -215,7 +233,7 @@
                   <i class="fas fa-phone-alt mr-1"></i> +2348067361005
                 </small> <br>
                 <small>
-                  <i class="fas fa-envelope mr-1"></i><a href="" class="text-reset"> Contact Us </a>
+                  <i class="fas fa-envelope mr-1"></i><a href="/contact" class="text-reset"> Contact Us </a>
                 </small>
               </address>
             </div>
