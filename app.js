@@ -2,9 +2,7 @@
 const express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
-  session = require("express-session"),
   bodyParser = require("body-parser"),
-  flash = require("connect-flash"),
   routes = require("./routes.js"); // requiring routes
 
 app.use(express.static(__dirname + "/public"));
@@ -28,15 +26,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // after session packages config
-app.use(
-  session({
-    secret: "money is super good",
-    saveUninitialized: false,
-    resave: false,
-  })
-);
-
-app.use(flash());
 
 // Using routes
 app.use(routes);
