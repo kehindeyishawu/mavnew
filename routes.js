@@ -46,17 +46,19 @@ router.post("/newsletter", (req, res) => {
 
 router.get("/newsletter/:token", (req, res) => {
   Newsletter.findOne({ emailToken: req.params.token }, (err, data) => {
-    // if (err || !data) {
-    //   return res
-    //     .status(410)
-    //     .send(
-    //       "<div style='text-align:center;'><h1>Error: The token you used doesn't exist or has expired</h1><div>"
-    //     );
-    // }
+    if (err || !data) {
+      console.log(err);
+      return res
+        .status(410)
+        .send(
+          "<div style='text-align:center;'><h1>Error: The token you used doesn't exist or has expired</h1><div>"
+        );
+    }
     res.send(
       "<div style='text-align:center;'><h1>Welcome to our Newsletter</h1><p>An email of your free ebook will be sent to you shortly</p><div>"
     );
     // res.download("./sendinblue.txt");
+    Newsletter.deleteOne({ email: req.params.token });
   });
 });
 
