@@ -84,6 +84,13 @@ main {
           background-color: darken($color: green, $amount: 15px);
         }
       }
+      &:nth-of-type(7) {
+        background-color: $first-color;
+        transition: background-color 500ms;
+        &:hover {
+          background-color: darken($color: $first-color, $amount: 15px);
+        }
+      }
     }
   }
 }
