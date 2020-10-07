@@ -16,10 +16,11 @@ const sendinblue = axios.create({
 router.post("/newsletter", (req, res) => {
   // set up sendinblue functionalities later
   let auth = crypto.randomBytes(15).toString("hex");
+  const sanEmail = req.sanitize(req.body.email);
 
   sendinblue
     .post("/contacts", {
-      email: req.body.email,
+      email: sanEmail,
       attributes: {
         token: auth,
       },
@@ -86,6 +87,11 @@ router.get("/contact", (req, res) => {
 });
 
 router.post("/contact", (req, res) => {
+  const contactEmail = req.sanitize(req.body.contactEmail);
+  const contactName = req.sanitize(req.body.contactName);
+  const contactMessage = req.sanitize(req.body.contactMessage);
+  const contactSubject = req.sanitize(req.body.contactSubject);
+
   sendinblue
     .post("/smtp/email", {
       sender: {
@@ -93,10 +99,10 @@ router.post("/contact", (req, res) => {
         email: "no-reply@mavnew.com",
       },
       to: [{ email: "rosaryfirm@gmail.com" }],
-      htmlContent: `<h3>Sender name and email: ${req.body.contactName} & ${req.body.contactEmail}</h3><p>${req.body.contactMessage}</p>`,
-      textContent: `Sender name and email: ${req.body.contactName} & ${req.body.contactEmail}.        ${req.body.contactMessage}`,
-      subject: req.body.contactSubject || "No subject",
-      replyTo: { email: req.body.contactEmail, name: req.body.contactName },
+      htmlContent: `<h3>Sender name and email: ${contactName} & ${contactEmail}</h3><p>${contactMessage}</p>`,
+      textContent: `Sender name and email: ${contactName} & ${contactEmail}.        ${contactMessage}`,
+      subject: contactSubject || "No subject",
+      replyTo: { email: contactEmail, name: contactName },
     })
     .then(() => {
       req.flash(

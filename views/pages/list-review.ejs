@@ -7,6 +7,16 @@
     <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
     <meta name="description" content="<%= post.metaDesc %>">
     <meta name="theme-color" content="#000000">
+    <!--  Essential META Tags for socail share visibility -->
+    <meta property="og:title" content="<%=post.name%>">
+    <meta property="og:description" content="<%=post.metaDesc%>">
+    <meta property="og:image" content="https://res.cloudinary.com/mavnew/image/upload/v1601310460/recumbent-bike-buying-guide.png">
+    <meta property="og:url" content="https://www.mavnew.com/list-review/<%=post.url%>">
+    <meta name="twitter:card" content="summary_large_image">
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:site_name" content="Mavnew">
+    <meta name="twitter:image:alt" content="Buying guides for all kinds of exercise or recumbent bikes">
+    <!-- All open graph cards and neccessary Twitter cards above -->
 
     <!-- Bootstrap CSS, google fonts, font awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -42,22 +52,22 @@
                     <i class="fas fa-share-alt"></i>
                   </div>
                   <div>
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://mavnew38.herokuapp.com/list-review/best-exercise-bike" rel="nofollow"><i class="fab fa-facebook-f"></i></a>
                   </div>
                   <div>
-                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href="https://twitter.com/home?status=https://mavnew38.herokuapp.com/list-review/best-exercise-bike " rel="nofollow"><i class="fab fa-twitter"></i></a>
                   </div>
                   <div>
-                    <a href=""><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://pinterest.com/pin/create/button/?url=https://mavnew38.herokuapp.com/list-review/best-exercise-bike&media=&description=" rel="nofollow"><i class="fab fa-pinterest-p"></i></a>
                   </div>
                   <div>
-                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mavnew38.herokuapp.com/list-review/best-exercise-bike&title=&summary=&source=" rel="nofollow"><i class="fab fa-linkedin-in"></i></a>
                   </div>
                   <div>
-                    <a href=""><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/?text=Get%20the%20best%20exercise%20bikes%20for%20your%20daily%20fitness" rel="nofollow"><i class="fab fa-whatsapp"></i></a>
                   </div>
                   <div>
-                    <a href=""><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:info@example.com?&subject=&body=https://mavnew38.herokuapp.com/list-review/best-exercise-bike"><i class="fas fa-envelope"></i></a>
                   </div>
                 </div>
                 <div class="row" id="post-newsletter">
@@ -126,7 +136,7 @@
 
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/list-review.js"></script>
+    <script src="/js/list-review.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

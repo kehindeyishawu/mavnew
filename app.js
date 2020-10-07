@@ -2,6 +2,7 @@
 const express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
+  expressSanitizer = require("express-sanitizer"),
   session = require("express-session"),
   flash = require("connect-flash"),
   routes = require("./routes.js"); // requiring routes
@@ -25,6 +26,7 @@ mongoose
 // before session packages config
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(expressSanitizer());
 
 // after session packages config
 app.use(
