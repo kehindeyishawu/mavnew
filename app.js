@@ -2,7 +2,6 @@
 const express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
-  bodyParser = require("body-parser"),
   session = require("express-session"),
   flash = require("connect-flash"),
   routes = require("./routes.js"); // requiring routes
@@ -24,8 +23,8 @@ mongoose
   .catch((err) => console.log(err));
 
 // before session packages config
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // after session packages config
 app.use(
