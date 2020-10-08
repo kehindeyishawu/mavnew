@@ -10,12 +10,12 @@
     <!--  Essential META Tags for socail share visibility -->
     <meta property="og:title" content="<%=post.name%>">
     <meta property="og:description" content="<%=post.metaDesc%>">
-    <meta property="og:image" content="https://res.cloudinary.com/mavnew/image/upload/v1601310460/recumbent-bike-buying-guide.png">
+    <meta property="og:image" content="https://res.cloudinary.com/mavnew/recumbent-bike-buying-guide.png">
     <meta property="og:url" content="https://www.mavnew.com/list-review/<%=post.url%>">
     <meta name="twitter:card" content="summary_large_image">
     <!--  Non-Essential, But Recommended -->
     <meta property="og:site_name" content="Mavnew">
-    <meta name="twitter:image:alt" content="Buying guides for all kinds of exercise or recumbent bikes">
+    <meta name="twitter:image:alt" content="Buying guides for all kinds of exercise bikes">
     <!-- All open graph cards and neccessary Twitter cards above -->
 
     <!-- Bootstrap CSS, google fonts, font awesome -->
@@ -52,22 +52,22 @@
                     <i class="fas fa-share-alt"></i>
                   </div>
                   <div>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://mavnew38.herokuapp.com/list-review/best-exercise-bike" rel="nofollow"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://mavnew38.herokuapp.com/list-review/<%=post.url%>" rel="nofollow"><i class="fab fa-facebook-f"></i></a>
                   </div>
                   <div>
-                    <a href="https://twitter.com/home?status=https://mavnew38.herokuapp.com/list-review/best-exercise-bike " rel="nofollow"><i class="fab fa-twitter"></i></a>
+                    <a href="https://twitter.com/home?status=https://mavnew38.herokuapp.com/list-review/<%=post.url%> Get the <%=post.name%> for your daily fitness needs" rel="nofollow"><i class="fab fa-twitter"></i></a>
                   </div>
                   <div>
-                    <a href="https://pinterest.com/pin/create/button/?url=https://mavnew38.herokuapp.com/list-review/best-exercise-bike&media=&description=" rel="nofollow"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://pinterest.com/pin/create/button/?url=https://mavnew38.herokuapp.com/list-review/<%=post.url%>&media=&description=Get the <%=post.name%> for your daily fitness needs" rel="nofollow"><i class="fab fa-pinterest-p"></i></a>
                   </div>
                   <div>
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mavnew38.herokuapp.com/list-review/best-exercise-bike&title=&summary=&source=" rel="nofollow"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mavnew38.herokuapp.com/list-review/<%=post.url%>&title=&summary=Get the <%=post.name%> for your daily fitness needs&source=" rel="nofollow"><i class="fab fa-linkedin-in"></i></a>
                   </div>
                   <div>
-                    <a href="https://wa.me/?text=Get%20the%20best%20exercise%20bikes%20for%20your%20daily%20fitness" rel="nofollow"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/?text=Get%20the%20best%20exercise%20bikes%20for%20your%20daily%20fitness%20at%20https%3A%2F%2Fmavnew38.herokuapp.com%2Flist-review%2F<%=post.url%>" rel="nofollow"><i class="fab fa-whatsapp"></i></a>
                   </div>
                   <div>
-                    <a href="mailto:info@example.com?&subject=&body=https://mavnew38.herokuapp.com/list-review/best-exercise-bike"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:sendto@example.com?&cc=&bcc=&subject=<%=post.name%>&body=https://mavnew38.herokuapp.com/list-review/<%=post.url%> Get the <%=post.name%> for your daily fitness needs"><i class="fas fa-envelope"></i></a>
                   </div>
                 </div>
                 <div class="row" id="post-newsletter">
