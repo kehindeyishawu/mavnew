@@ -59,7 +59,7 @@
             <h4 class="mt-5">Recent Posts</h4>
             <ul class="list-unstyled">
               <% for(const e of recent){ %>
-                <li><a href="<%= e.url %>" class="custom-link"><%= e.name %></a></li>
+                <li><a href="/list-review/<%= e.url %>" class="custom-link"><%= e.name %></a></li>
               <%}%>
             </ul>
             <hr>

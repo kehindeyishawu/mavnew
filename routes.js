@@ -35,7 +35,7 @@ router.post("/newsletter", (req, res) => {
       if (error.response) {
         console.log(error.response.status);
         console.log(error.response.data);
-        res.sendStatus(500);
+        res.sendStatus(502);
       } else if (error.request) {
         console.log(error.request.status);
         console.log(error.request.data);
@@ -64,7 +64,17 @@ router.get("/newsletter/:token", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  res.render("pages/home");
+  Post.find({}, (err, data) => {
+    if (err) {
+      console.log(err);
+      return res
+        .status(502)
+        .send(
+          "<h2 style='margin-top:30px;'>Sorry we are currently experiencing some technical difficulties here. The page will be back up as soon as possible</h2>"
+        );
+    }
+    res.render("pages/home", { post: data });
+  });
 });
 
 router.get("/privacy-policy", (req, res) => {
@@ -79,7 +89,11 @@ router.get("/contact", (req, res) => {
   Post.find({}, (err, allPost) => {
     if (err || !allPost) {
       console.log(err || "posts were not found");
-      return res.status(404).render("pages/not-found");
+      return res
+        .status(502)
+        .render(
+          "<h2 style='margin-top:30px;'>Sorry we are currently experiencing some technical difficulties here. The page will be back up as soon as possible</h2>"
+        );
     }
     res.locals.recent = allPost.reverse();
     res.render("pages/contact");

@@ -10,13 +10,13 @@
     <!--  Essential META Tags for socail share visibility -->
     <meta property="og:title" content="<%=post.name%>">
     <meta property="og:description" content="<%=post.metaDesc%>">
-    <meta property="og:image" content="https://res.cloudinary.com/mavnew/c_scale,w_1200,h_630/<%= post.postImg %>">
+    <meta property="og:image" content="https://res.cloudinary.com/mavnew/w_1200,h_630/<%= post.postImg %>">
     <meta property="og:url" content="https://www.mavnew.com/list-review/<%=post.url%>">
     <meta name="twitter:card" content="summary_large_image">
     <!--  Non-Essential, But Recommended -->
     <meta property="og:site_name" content="Mavnew">
     <meta name="twitter:image:alt" content="<%=post.postImgAlt%>">
-    <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/mavnew/c_scale,w_256,h_256/<%= post.postImg %>">
+    <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/mavnew/w_256,h_256/<%= post.postImg %>">
     <!-- All open graph cards and neccessary Twitter cards above -->
 
     <!-- Bootstrap CSS, google fonts, font awesome -->
@@ -113,11 +113,11 @@
                 </small>
               </p>
               <address class="text-center">
-                <a href="" title="Facebook" class="text-dark"><i class="fab fa-facebook-f mr-3"></i></a>
-                <a href="" title="Twitter" class="text-dark"><i class="fab fa-twitter mr-3"></i></a>
-                <a href="" title="Instagram" class="text-dark"><i class="fab fa-instagram mr-3"></i></a>
-                <a href="" title="LinkedIn" class="text-dark"><i class="fab fa-linkedin mr-3"></i></a>
-                <a href="" title="Pinterest" class="text-dark"><i class="fab fa-pinterest"></i></a>                
+                <a href="https://web.facebook.com/kevin.yishawu/" rel="nofollow" title="Facebook" class="text-dark"><i class="fab fa-facebook-f mr-3"></i></a>
+                <a href="https://twitter.com/f_Kenny_f" rel="nofollow" title="Twitter" class="text-dark"><i class="fab fa-twitter mr-3"></i></a>
+                <a href="https://www.instagram.com/f_kenny_f/" rel="nofollow" title="Instagram" class="text-dark"><i class="fab fa-instagram mr-3"></i></a>
+                <a href="https://www.linkedin.com/in/kehinde-y-a4234311a/" title="LinkedIn" rel="nofollow" class="text-dark"><i class="fab fa-linkedin mr-3"></i></a>
+                <a href="https://www.pinterest.com/kehindeyishawu/_saved/" title="Pinterest" rel="nofollow" class="text-dark"><i class="fab fa-pinterest"></i></a>                
               </address>
             </article>
             <section id="recent-post">
@@ -126,6 +126,12 @@
                 <% for(let list of recent){ %>
                   <li><a class="custom-link" href="/<%- list.category %>/<%- list.url %>"><%- list.name %></a></li>
                 <% } %>
+                <li class="custom-link">
+                  What are the beasts of the bikes
+                </li>
+                <li class="custom-link">
+                  Best sleek Bike 2020
+                </li>
               </ul>
             </section>
             <p class="text-center">Amazon ads</p>

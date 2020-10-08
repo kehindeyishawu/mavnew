@@ -44,11 +44,11 @@
               </address>
               <address class="col-3 mb-0">
                 <small>
-                  <a href="" rel="nofollow"><i class="fab fa-facebook-f mr-3"></i></a>
-                  <a href="" rel="nofollow"><i class="fab fa-twitter mr-3"></i></a>
-                  <a href="" rel="nofollow"><i class="fab fa-instagram mr-3"></i></a>
-                  <a href="" rel="nofollow"><i class="fab fa-youtube mr-3"></i></a>
-                  <a href="" rel="nofollow"><i class="fab fa-pinterest"></i></a>
+                  <a href="https://fb.me/mavnew38" rel="nofollow"><i class="fab fa-facebook-f mr-3"></i></a>
+                  <a href="https://twitter.com/mavnew3" rel="nofollow"><i class="fab fa-twitter mr-3"></i></a>
+                  <a href="https://www.instagram.com/mavnew38/" rel="nofollow"><i class="fab fa-instagram mr-3"></i></a>
+                  <a href="https://www.youtube.com/channel/UCOA7lV_JPHQMGU9YUdQ5qSg" rel="nofollow"><i class="fab fa-youtube mr-3"></i></a>
+                  <a href="https://www.pinterest.com/mavnew" rel="nofollow"><i class="fab fa-pinterest"></i></a>
                 </small>
               </address>
             </div>
@@ -204,7 +204,19 @@
         <div class="container">
           <h2>Blog Posts</h2>
           <div class="row">
-            <div class="col-md-6 mb-4">
+            <% for(let e of post){ %>
+              <div class="col-md-6 mb-4">
+                <div class="blog-content">
+                  <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:640/<%=e.postImg%>" alt="<%=e.postImgAlt%>" sizes="100vw">
+                  <div>
+                    <h3><%=e.name%></h3>
+                    <p><%=e.metaDesc.slice(0, 90)%>...</p>
+                    <small><a href="/list-review/<%=e.url%>"><i class="fas fa-angle-double-right icon"></i> READ MORE</a></small>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+            <!-- <div class="col-md-6 mb-4">
               <div class="blog-content">
                 <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:640/numerous-exercise-bikes-on-display.jpg" alt="woman-riding-upright-bike" sizes="100vw">
                 <div>
@@ -223,7 +235,7 @@
                   <small><a href="/list-review/best-recumbent-bike"><i class="fas fa-angle-double-right"></i> READ MORE</a></small>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -284,11 +296,11 @@
               <address>
                 <p>Let us be social</p>
                 <small>
-                  <a href="" rel="nofollow"><i class="fab fa-facebook-f mr-3"></i></a>
-                  <a href="" rel="nofollow"><i class="fab fa-twitter mr-3"></i></a>
-                  <a href="" rel="nofollow"><i class="fab fa-instagram mr-3"></i></a>
-                  <a href="" rel="nofollow"><i class="fab fa-youtube mr-3"></i></a>
-                  <a href="" rel="nofollow"><i class="fab fa-pinterest"></i></a>
+                  <a href="https://fb.me/mavnew38" rel="nofollow"><i class="fab fa-facebook-f mr-3"></i></a>
+                  <a href="https://twitter.com/mavnew3" rel="nofollow"><i class="fab fa-twitter mr-3"></i></a>
+                  <a href="https://www.instagram.com/mavnew38/" rel="nofollow"><i class="fab fa-instagram mr-3"></i></a>
+                  <a href="https://www.youtube.com/channel/UCOA7lV_JPHQMGU9YUdQ5qSg" rel="nofollow"><i class="fab fa-youtube mr-3"></i></a>
+                  <a href="https://www.pinterest.com/mavnew" rel="nofollow"><i class="fab fa-pinterest"></i></a>
                   </small>
               </address>
             </div>
@@ -316,7 +328,7 @@
           <small>
             MAVNEW &COPY; 2020 mavnew.com - All rights reserved.
           </small>
-          <div class="credit">Website Crafted By <a href="https://www.instagram.com/f_kenny_f/" rel="nofollow">Kehinde Yishawu</a></div>
+          <div class="credit">Website Crafted By <a href="https://www.linkedin.com/in/kehinde-y-a4234311a/" rel="nofollow">Kehinde Yishawu</a></div>
         </div>
       </footer>
     </main>
