@@ -10,12 +10,13 @@
     <!--  Essential META Tags for socail share visibility -->
     <meta property="og:title" content="<%=post.name%>">
     <meta property="og:description" content="<%=post.metaDesc%>">
-    <meta property="og:image" content="https://res.cloudinary.com/mavnew/recumbent-bike-buying-guide.png">
+    <meta property="og:image" content="https://res.cloudinary.com/mavnew/c_scale,w_1200,h_630/<%- post.postImg %>">
     <meta property="og:url" content="https://www.mavnew.com/list-review/<%=post.url%>">
     <meta name="twitter:card" content="summary_large_image">
     <!--  Non-Essential, But Recommended -->
     <meta property="og:site_name" content="Mavnew">
     <meta name="twitter:image:alt" content="Buying guides for all kinds of exercise bikes">
+    <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/mavnew/c_scale,w_256,h_256/<%- post.postImg %>">
     <!-- All open graph cards and neccessary Twitter cards above -->
 
     <!-- Bootstrap CSS, google fonts, font awesome -->
