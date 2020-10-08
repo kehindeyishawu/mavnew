@@ -24,7 +24,7 @@ const postSchema = new mongoose.Schema({
 const newsletter = new mongoose.Schema({
   email: String,
   emailToken: { type: String, default: crypto.randomBytes(64).toString("hex") },
-  expireAt: { type: Date, default: Date.now, expires: "48h" },
+  expireAt: { type: Date, default: Date.now, expires: "2880m" },
 });
 
 // collection object
