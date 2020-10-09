@@ -2,7 +2,11 @@ const fs = require("fs");
 const Terser = require("terser");
 
 const files = [
-  { org: "./javascript/home.min.js", location: "./public/js/home.min.js" },
+  { org: "./javascript/home.js", location: "./public/js/home.min.js" },
+  {
+    org: "./javascript/list-review.js",
+    location: "./public/js/list-review.min.js",
+  },
 ];
 let min;
 let result;
