@@ -17,7 +17,6 @@ let minifyAssets = async () => {
       min = await fs.readFileSync(e.org).toString();
       result = await Terser.minify(min);
       fs.writeFileSync(e.location, result.code);
-      //   console.log(result.code);
     }
   } catch (error) {
     console.log(error, "from terser minify catch block");
