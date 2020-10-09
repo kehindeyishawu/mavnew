@@ -11,6 +11,7 @@ const express = require("express"),
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 require("dotenv").config();
+require("./minify.js")();
 
 // connecting to database
 mongoose
@@ -39,7 +40,14 @@ app.use(
 );
 app.use(flash());
 
-app.use(compression({ filter: shouldCompress }));
+// setting global variables to display within pages
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
+
+app.use(compression({ filter: shouldCompress })); //compression middleware
 function shouldCompress(req, res) {
   if (req.headers["x-no-compression"]) {
     return false;
@@ -47,12 +55,7 @@ function shouldCompress(req, res) {
 
   return compression.filter(req, res);
 }
-// setting global variables to display within pages
-app.use((req, res, next) => {
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
-  next();
-});
+
 // Using routes
 app.use(routes);
 
