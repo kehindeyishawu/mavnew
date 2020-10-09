@@ -11,7 +11,7 @@ const express = require("express"),
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 require("dotenv").config();
-require("./minify.js")();
+// require("./minify.js")();
 
 // connecting to database
 mongoose
