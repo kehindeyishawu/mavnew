@@ -18,7 +18,9 @@
     "express": "^4.17.1",
     "express-sanitizer": "^1.0.5",
     "express-session": "^1.17.1",
-    "mongoose": "^5.10.2",
+    "mongoose": "^5.10.2"
+  },
+  "devDependencies": {
     "terser": "^5.3.4"
   }
 }
