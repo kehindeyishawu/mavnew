@@ -5,6 +5,7 @@ const express = require("express"),
   expressSanitizer = require("express-sanitizer"),
   session = require("express-session"),
   flash = require("connect-flash"),
+  compression = require("compression"),
   routes = require("./routes.js"); // requiring routes
 
 app.use(express.static(__dirname + "/public"));
@@ -36,8 +37,16 @@ app.use(
     resave: false,
   })
 );
-
 app.use(flash());
+
+app.use(compression({ filter: shouldCompress }));
+function shouldCompress(req, res) {
+  if (req.headers["x-no-compression"]) {
+    return false;
+  }
+
+  return compression.filter(req, res);
+}
 // setting global variables to display within pages
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
