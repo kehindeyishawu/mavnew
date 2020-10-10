@@ -13,6 +13,24 @@ const sendinblue = axios.create({
   timeout: 7000,
 });
 
+router.get("/", (req, res) => {
+  Post.find({}, (err, data) => {
+    if (err) {
+      console.log(err);
+      return res
+        .status(502)
+        .send(
+          "<h2 style='margin-top:30px;'>Sorry we are currently experiencing some technical difficulties here. The page will be back up as soon as possible</h2>"
+        );
+    }
+    res.render("pages/home", { post: data });
+  });
+});
+
+router.get("/robots.txt", (req, res) => {
+  res.sendFile(__dirname + "/views/robots.txt");
+});
+
 router.post("/newsletter", (req, res) => {
   // set up sendinblue functionalities later
   let auth = crypto.randomBytes(15).toString("hex");
@@ -60,20 +78,6 @@ router.get("/newsletter/:token", (req, res) => {
     );
     // res.download("./sendinblue.txt");
     // Newsletter.deleteOne({ email: req.params.token });
-  });
-});
-
-router.get("/", (req, res) => {
-  Post.find({}, (err, data) => {
-    if (err) {
-      console.log(err);
-      return res
-        .status(502)
-        .send(
-          "<h2 style='margin-top:30px;'>Sorry we are currently experiencing some technical difficulties here. The page will be back up as soon as possible</h2>"
-        );
-    }
-    res.render("pages/home", { post: data });
   });
 });
 
