@@ -4,7 +4,6 @@ const express = require("express"),
   mongoose = require("mongoose"),
   expressSanitizer = require("express-sanitizer"),
   session = require("express-session"),
-  spdy = require("spdy"),
   flash = require("connect-flash"),
   compression = require("compression"),
   routes = require("./routes.js"); // requiring routes
@@ -66,16 +65,6 @@ app.use((req, res, next) => {
 });
 
 // start server
-// app.listen(process.env.PORT || 3000, () => {
-//   console.log("server has started running");
-// });
-
-const port = process.env.PORT || 3000;
-spdy.createServer({}, app).listen(port, (error) => {
-  if (error) {
-    console.error(error);
-    return process.exit(1);
-  } else {
-    console.log(`server running on port ${port}`);
-  }
+app.listen(process.env.PORT || 3000, () => {
+  console.log("server has started running");
 });
