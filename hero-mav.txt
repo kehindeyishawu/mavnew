@@ -1,0 +1,2 @@
+Apply canonical to all pages and change
+change all https for mavnew on page to http
