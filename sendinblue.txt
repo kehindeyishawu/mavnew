@@ -98,3 +98,5 @@ sendinblue
   }
   next();
 });
+
+<div id="amzn-assoc-ad-6043ba4a-f842-41d9-848a-f303fb00c8bb"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=6043ba4a-f842-41d9-848a-f303fb00c8bb"></script>

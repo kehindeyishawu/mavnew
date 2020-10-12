@@ -121,8 +121,8 @@
               </address>
             </article>
             <section id="recent-post">
-              <h2 class="mt-5 text-center text-lg-left pl-lg-5">Recent Posts</h2>
-              <ul class="list-unstyled text-center text-lg-left pl-lg-5">
+              <h2 class="mt-5 text-center text-lg-left pl-lg-4">Recent Posts</h2>
+              <ul class="list-unstyled text-center text-lg-left pl-lg-4">
                 <% for(let list of recent){ %>
                   <li><a class="custom-link" href="/<%- list.category %>/<%- list.url %>"><%- list.name %></a></li>
                 <% } %>
@@ -134,13 +134,15 @@
                 </li>
               </ul>
             </section>
-            <p class="text-center">Amazon ads</p>
-            <p class="text-center">Other Advertisement placement</p>
+            <div class="text-muted mb-4 mt-5 border-bottom text-center">Advertisement</div>
+            <div id="amzn-assoc-ad-6043ba4a-f842-41d9-848a-f303fb00c8bb"></div>
+            <!-- <p class="text-center">Other Advertisement placement</p> -->
           </aside>
         </div>
       </div>
     <%- include("../partials/footer.ejs") %>
-
+    <!-- Ads and tracking scripts or others -->
+    <script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=6043ba4a-f842-41d9-848a-f303fb00c8bb"></script>
     <!-- Optional JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/js/list-review.min.js"></script>
