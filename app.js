@@ -10,28 +10,17 @@ const express = require("express"),
 
 app.use(express.static(__dirname + "/public"));
 
-// app.use((req, res, next) => {
-//   if (process.env.NODE_ENV === "prod") {
-//     if (req.headers.host === "www.mavnew.com")
-//       return res.redirect(
-//         301,
-//         "https://mavnew.herokuapp.com" + req.originalUrl
-//       );
-//     if (req.headers["x-forwarded-proto"] !== "https")
-//       return res.redirect("https://" + req.headers.host + req.url);
-//     else return next();
-//   } else return next();
-// });
-
 app.use((req, res, next) => {
-  //not sure if this https redirect middleware will slow down the server. I'm thinking it might, so keep eye here incase error or slow performance happens
-  if (
-    (!req.secure || req.hostname === "www.mavnew.com") &&
-    process.env.NODE_ENV === "prod"
-  ) {
-    return res.redirect(301, `https://mavnew.herokuapp.com${req.originalUrl}`);
-  }
-  next();
+  if (process.env.NODE_ENV === "prod") {
+    if (req.headers.host === "www.mavnew.com")
+      return res.redirect(
+        301,
+        "https://mavnew.herokuapp.com" + req.originalUrl
+      );
+    if (req.headers["x-forwarded-proto"] !== "https")
+      return res.redirect(301, "https://" + req.headers.host + req.url);
+    else return next();
+  } else return next();
 });
 
 app.set("view engine", "ejs");
