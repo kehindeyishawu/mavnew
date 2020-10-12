@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   if (req.protocol !== "https" && process.env.NODE_ENV === "prod") {
     return res.redirect(
       301,
-      `https://mavnew.herokuapp.com${req.baseUrl + req.path}`
+      `https://mavnew.herokuapp.com${req.headers.host + req.url}`
     );
   }
   next();
