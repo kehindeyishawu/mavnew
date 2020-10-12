@@ -29,7 +29,7 @@ app.use((req, res, next) => {
         301,
         "https://mavnew.herokuapp.com" + req.originalUrl
       );
-    } else if (!req.secure) {
+    } else if (req.headers["x-forwarded-proto"] !== "https") {
       return res.redirect(301, "https://" + req.headers.host + req.url);
     } else return next();
   } else return next();
