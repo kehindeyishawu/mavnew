@@ -1,2 +1,9 @@
-Apply canonical to all pages and change
-change all https for mavnew on page to http
+#For the day I decide to buy a hobby and standard plan and change all my links and canonical back from the current https://mavnew.herokuapp.com to https://www.mavnew.com
+
+Apply canonical to all pages and changed to https://mavnew.herokuapp.com
+change all https for mavnew on page to http in the og, twitter cards on all pages - I dont think you need to change back
+make redirect for any request coming http-mavnew.herokuapp.com or http-ww.mavnew.com to https-mavnew.herokuapp.com 
+changed dns redirect for root domain to https://mavnew.herokuapp.com
+
+1. on list-review blog
+changed social share site protocol from https-http
