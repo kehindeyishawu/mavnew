@@ -61,7 +61,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(compression({ filter: shouldCompress })); //compression middleware
+app.use(compression({ filter: shouldCompress, threshold: 0 })); //compression middleware
 function shouldCompress(req, res) {
   if (req.headers["x-no-compression"]) {
     return false;
