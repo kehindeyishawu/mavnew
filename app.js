@@ -10,16 +10,28 @@ const express = require("express"),
 
 app.use(express.static(__dirname + "/public"));
 
+// app.use((req, res, next) => {
+//   if (process.env.NODE_ENV === "prod") {
+//     if (req.headers.host === "www.mavnew.com")
+//       return res.redirect(
+//         301,
+//         "https://mavnew.herokuapp.com" + req.originalUrl
+//       );
+//     if (req.headers["x-forwarded-proto"] !== "https")
+//       return res.redirect(301, "https://" + req.headers.host + req.url);
+//     else return next();
+//   } else return next();
+// });
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === "prod") {
-    if (req.headers.host === "www.mavnew.com")
+    if (req.hostname === "www.mavnew.com") {
       return res.redirect(
         301,
         "https://mavnew.herokuapp.com" + req.originalUrl
       );
-    if (req.headers["x-forwarded-proto"] !== "https")
+    } else if (!req.secure) {
       return res.redirect(301, "https://" + req.headers.host + req.url);
-    else return next();
+    } else return next();
   } else return next();
 });
 
