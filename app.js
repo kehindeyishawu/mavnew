@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 
 app.set("view engine", "ejs");
 require("dotenv").config();
-// require("./minify.js")();
+require("./minify.js")();
 
 // connecting to database
 mongoose

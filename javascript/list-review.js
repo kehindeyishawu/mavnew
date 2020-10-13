@@ -11,6 +11,8 @@ const newsletter = document.querySelector("#footer form");
 const postLetter = document.querySelector("#post-footer form");
 const formField = document.querySelector("#footer input");
 const postField = document.querySelector("#post-footer input");
+const viewportWidth = document.documentElement.clientWidth;
+const pointer = document.querySelector(".pointer");
 
 axios.defaults.timeout = 10000;
 
@@ -40,12 +42,16 @@ const observer = new IntersectionObserver((entries, observer) => {
       share.classList.add("slide-up");
     }
     // target ads or ignore when in mobile viewport and add the class hide. write it in the code below and threshold could be 0.5-1
+    if (e.target === pointer && e.isIntersecting && viewportWidth < "800") {
+      share.classList.add("hide");
+    }
   });
 }, {});
 
 observer.observe(h1);
 observer.observe(postFooter);
 observer.observe(footer);
+observer.observe(pointer);
 
 pageContent.addEventListener("click", () => {
   if (collapse.classList.length === 2) {
