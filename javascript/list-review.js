@@ -42,7 +42,7 @@ const observer = new IntersectionObserver((entries, observer) => {
       share.classList.add("slide-up");
     }
     // target ads or ignore when in mobile viewport and add the class hide. write it in the code below and threshold could be 0.5-1
-    if (e.target === pointer && e.isIntersecting && viewportWidth < "800") {
+    if (e.target === pointer && e.isIntersecting && viewportWidth < "768") {
       share.classList.add("hide");
     }
   });

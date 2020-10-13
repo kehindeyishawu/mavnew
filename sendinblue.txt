@@ -99,4 +99,4 @@ sendinblue
   next();
 });
 
-<div id="amzn-assoc-ad-6043ba4a-f842-41d9-848a-f303fb00c8bb"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=6043ba4a-f842-41d9-848a-f303fb00c8bb"></script>
+<a href="https://www.amazon.com/Exerpeutic-Foldable-Exercise-Weight-Capacity/dp/B081P4CJLF/ref=as_li_ss_il?ie=UTF8&linkCode=li2&tag=mavnew-20&linkId=6efdc28c5424e404909252c6d31c7ae1&language=en_US" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B081P4CJLF&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=mavnew-20&language=en_US" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=mavnew-20&language=en_US&l=li2&o=1&a=B081P4CJLF" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
