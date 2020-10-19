@@ -52,6 +52,7 @@ router.post("/newsletter", (req, res) => {
     .then((response) => {
       res.sendStatus(201);
       console.log("contact created");
+      Newsletter.create({ email: sanEmail, emailToken: auth });
     })
     .catch((error) => {
       if (error.response) {
@@ -80,6 +81,7 @@ router.get("/newsletter/:token", (req, res) => {
     res.send(
       "<div style='text-align:center;'><h1>Welcome to our Newsletter</h1><p>An email of your free ebook will be sent to you shortly</p><div>"
     );
+    Newsletter.deleteOne({ emailToken: req.params.token });
     // res.download("./sendinblue.txt");
     // Newsletter.deleteOne({ email: req.params.token });
   });
