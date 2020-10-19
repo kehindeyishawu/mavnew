@@ -32,7 +32,6 @@ router.get("/robots.txt", (req, res) => {
 });
 
 router.get("/sitemap.xml", (req, res) => {
-  res.type("application/xml");
   res.sendFile("sitemap.xml");
 });
 
@@ -82,7 +81,11 @@ router.get("/newsletter/:token", (req, res) => {
     res.send(
       "<div style='text-align:center;'><h1>Welcome to our Newsletter</h1><p>An email of your free ebook will be sent to you shortly</p><div>"
     );
-    Newsletter.deleteOne({ emailToken: req.params.token });
+    Newsletter.deleteOne({ emailToken: req.params.token }, (err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
     // res.download("./sendinblue.txt");
     // Newsletter.deleteOne({ email: req.params.token });
   });
