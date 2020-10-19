@@ -6,7 +6,8 @@ const express = require("express"),
   session = require("express-session"),
   flash = require("connect-flash"),
   compression = require("compression"),
-  routes = require("./routes.js"); // requiring routes
+  mainRoutes = require("./routes/main.js"), // requiring main routes
+  postRoutes = require("./routes/post.js"); // requiring post routes
 
 app.use(express.static(__dirname + "/public"));
 
@@ -71,7 +72,8 @@ function shouldCompress(req, res) {
 }
 
 // Using routes
-app.use(routes);
+app.use(mainRoutes);
+app.use(postRoutes);
 
 // 404 route
 app.use((req, res, next) => {

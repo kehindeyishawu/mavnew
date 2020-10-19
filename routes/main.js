@@ -2,7 +2,7 @@ const express = require("express"),
   router = express.Router(),
   axios = require("axios").default,
   crypto = require("crypto"),
-  { Post, Newsletter } = require("./models");
+  { Post, Newsletter } = require("../models");
 
 require("dotenv").config(); // env variables
 const sendinblue = axios.create({
@@ -28,7 +28,11 @@ router.get("/", (req, res) => {
 });
 
 router.get("/robots.txt", (req, res) => {
-  res.sendFile(__dirname + "/views/robots.txt");
+  res.sendFile("robots.txt");
+});
+
+router.get("/sitemap.xml", (req, res) => {
+  res.sendFile("sitemap.xml");
 });
 
 router.post("/newsletter", (req, res) => {
@@ -137,29 +141,6 @@ router.post("/contact", (req, res) => {
       res.redirect("/contact");
       console.log(error);
     });
-});
-
-router.get("/list-review/:url", (req, res) => {
-  let otherPost = [];
-  let pagePost;
-  Post.find({}, (err, allPost) => {
-    if (err || !allPost) {
-      console.log(err || "posts were not found");
-      return res.status(404).render("pages/not-found");
-    }
-    allPost.forEach((e) => {
-      if (e.category === "list-review" && e.url === req.params.url) {
-        pagePost = e;
-      } else {
-        otherPost.push(e);
-      }
-    });
-    if (!pagePost) {
-      return res.status(404).render("pages/not-found");
-    }
-    res.locals.recent = otherPost.reverse();
-    res.render("pages/list-review", { post: pagePost });
-  });
 });
 
 module.exports = router;

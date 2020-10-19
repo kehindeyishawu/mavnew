@@ -5,6 +5,8 @@ change all https for mavnew on page to http in the og, twitter cards on all page
 make redirect for any request coming http-mavnew.herokuapp.com or http-ww.mavnew.com to https-mavnew.herokuapp.com 
 changed dns redirect for root domain to https://mavnew.herokuapp.com
 changed social share site link for twitter from mavnew.herokuapp.com to www.mavnew.com
+change google analytics property name from mavnew.herokuapp.com to www.mavnew.com
+change xml sitemap name from mavnew.herokuapp.com to www.mavnew.com
 
 1. on list-review blog
 changed social share site protocol from https-http
