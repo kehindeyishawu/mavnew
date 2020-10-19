@@ -32,6 +32,7 @@ router.get("/robots.txt", (req, res) => {
 });
 
 router.get("/sitemap.xml", (req, res) => {
+  res.type("application/xml");
   res.sendFile("sitemap.xml");
 });
 
