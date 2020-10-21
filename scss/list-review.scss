@@ -110,9 +110,7 @@ main {
     padding: 20px 0;
   }
   b {
-    a {
-      color: $fourth-color;
-    }
+    color: $fifth-color;
   }
   h2 {
     font-size: 18px;
@@ -131,7 +129,7 @@ main {
 
 #product-list {
   b {
-    color: $fourth-color;
+    color: $fifth-color;
   }
   .title {
     background-color: $fifth-color;
