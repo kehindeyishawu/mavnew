@@ -9,6 +9,10 @@
   },
   "author": "Kehinde Yishawu",
   "license": "ISC",
+  "engines": {
+    "node": "18.20.4",
+    "npm": "10.7.0"
+  },
   "dependencies": {
     "axios": "^0.20.0",
     "compression": "^1.7.4",

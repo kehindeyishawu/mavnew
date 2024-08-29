@@ -10,19 +10,19 @@ const express = require("express"),
   postRoutes = require("./routes/post.js"); // requiring post routes
 
 app.use(express.static(__dirname + "/public"));
-
-app.use((req, res, next) => {
-  if (process.env.NODE_ENV === "prod") {
-    if (req.headers.host === "www.mavnew.com")
-      return res.redirect(
-        301,
-        "https://mavnew.herokuapp.com" + req.originalUrl
-      );
-    else if (req.headers["x-forwarded-proto"] !== "https")
-      return res.redirect(301, "https://" + req.headers.host + req.url);
-    else return next();
-  } else return next();
-});
+// redirect function below
+// app.use((req, res, next) => {
+//   if (process.env.NODE_ENV === "prod") {
+//     if (req.headers.host === "www.mavnew.com")
+//       return res.redirect(
+//         301,
+//         "https://mavnew.herokuapp.com" + req.originalUrl
+//       );
+//     else if (req.headers["x-forwarded-proto"] !== "https")
+//       return res.redirect(301, "https://" + req.headers.host + req.url);
+//     else return next();
+//   } else return next();
+// });
 
 app.set("view engine", "ejs");
 require("dotenv").config();
@@ -82,5 +82,5 @@ app.use((req, res, next) => {
 
 // start server
 app.listen(process.env.PORT || 3000, () => {
-  console.log("server has started running");
+  console.log(`server has started running on ${process.env.PORT || 3000}`);
 });
