@@ -25,7 +25,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet"> 
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <link rel="stylesheet" href="/css/home.min.css">
-
   </head>
   <body>
     <main id="wrapper">
@@ -262,10 +261,10 @@
         <div class="container">
           <h2>Blog Posts</h2>
           <div class="row">
-            <% for(let e of post){ %>
+            <% for(let e of post.reverse()){ %>
               <div class="col-md-6 mb-4">
                 <div class="blog-content">
-                  <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:640/<%=e.postImg%>" alt="<%=e.postImgAlt%>" sizes="100vw">
+                  <img src="https://res.cloudinary.com/mavnew/c_fill,f_auto,q_auto,w_auto:100:640/<%=e.postImg%>" alt="<%=e.postImgAlt%>" sizes="100vw">
                   <div>
                     <h3><%=e.name%></h3>
                     <p><%=e.metaDesc.slice(0, 90)%>...</p>

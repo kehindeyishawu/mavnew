@@ -10,7 +10,7 @@ const postSchema = new mongoose.Schema({
   // content: String,
   // author
   url: String,
-  // date: { type: Date, default: Date.now },
+  date: { type: Date, default: Date.now },
   share: {
     fb: String,
     tw: String,
@@ -42,20 +42,22 @@ const collection = {
 //     console.log(data);
 //   }
 // );
-// collection.Post.create({
-//     name: "Best Recumbent Bike 2020",
-//     postImg: "exercise-bike-rim-and-pedal.jpg",
-//     postImgAlt: "exercise bike rim and pedal",
-//     metaDesc: "With so many varieties in the market today, it can be difficult selecting the right one for you. Which is why we at MAVNEW have compiled a list of the Best Recumbent Bike in the market today. Recumbent bikes are best known for the comfort they give to users while cycling (especially for people with back problems).They put less tension on the joints and provide a good rehabilitation exercise to help elderly people integrate the sit-and-stand movement",
-//     url: "best-recumbent-bike",
-//     category: "list-review",
-//     share: {
-//         fb: "facebook.com"
-//     }
-// }, (err, post)=>{
-//     if(err){
-//         console.log('error: something went wrong with the post creation request in models file')
-//     }else{console.log("post sucessfully created")}
-// })
+
+collection.Post.create({
+    name: "Best Recumbent Bike 2022",
+    postImg: "recumbent-bike",
+    postImgAlt: "Recumbent bike rim and paddle",
+    metaDesc: "Need a Recumbent Bike in 2022? We have got you covered. Brush through our list of top recumbent bikes for yor needs",
+    url: "best-recumbent-bike",
+    date: new Date(2022, 6, 24),
+    category: "list-review",
+    share: {
+        fb: "facebook.com"
+    }
+}, (err, post)=>{
+    if(err){
+        console.log('error: something went wrong with the post creation request in models file')
+    }else{console.log("post sucessfully created")}
+})
 
 module.exports = collection;

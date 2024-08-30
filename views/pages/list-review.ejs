@@ -23,18 +23,9 @@
     <!-- Bootstrap CSS, google fonts, font awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet"> 
-    <script src="https://kit.fontawesome.com/034e494de5.js" crossorigin="anonymous"></script>
-    <link rel="canonical" href="https://mavnew.herokuapp.com/list-review/<%- post.url %>">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <link rel="stylesheet" href="/css/list-review.min.css">
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M2KKTN3');</script>
-    <!-- End Google Tag Manager -->
+    <script src="https://kit.fontawesome.com/034e494de5.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <%- include("../partials/nav.ejs") %>
@@ -49,10 +40,12 @@
                   <span><%- post.name %></span>
                 </small>
                 <h1 class="mt-2"><%- post.name %> - Buyer's Guide</h1>
-                <p><small class="text-muted">by <b>Kehinde Yishawu</b> | Updated <time datetime="2020-09-01">setember 1, 2020</time> </small></p>
+                <p><small class="text-muted">by <b>ADMIN</b> | Updated, <time datetime="<%=`${post.date.getFullYear()}-${post.date.getMonth()+1}-${post.date.getDate()}`%>"><%=`${post.date.getMonth()+1} ${post.date.getFullYear()}`%></time> </small></p>
               </header>
-              <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:950/<%- post.postImg %>" sizes="100vw" alt="<%- post.postImgAlt %>" class="post-img d-md-block d-none">
-              <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,q_auto,w_auto:100:500/<%- post.postImg %>" sizes="100vw" alt="<%- post.postImgAlt %>" class="post-img d-md-none">
+              <picture>
+                <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/mavnew/c_fill,ar_4:3,f_auto,q_auto,w_auto:100:850/<%- post.postImg %>" sizes="100vw">
+                <img src="https://res.cloudinary.com/mavnew/c_fill,ar_16:9,f_auto,q_auto,w_auto:100:850/<%- post.postImg %>" sizes="100vw" alt="<%- post.postImgAlt %>" class="post-img">
+              </picture>
               <%- include(`../posts/list-review/${post.url}.ejs`) %>
               <footer id="post-footer" class="space-top">
                 <div id="social-share" class="text-center">
@@ -63,7 +56,7 @@
                     <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.mavnew.com/list-review/<%=post.url%>" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-facebook-f"></i></a>
                   </div>
                   <div>
-                    <a href="https://twitter.com/intent/tweet?url=http://mavnew.herokuapp.com/list-review/<%=post.url%>&text=Get+the+<%=post.name%>+for+your+daily+fitness+needs" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-twitter"></i></a>
+                    <a href="https://twitter.com/intent/tweet?url=http://mavnew.herokuapp.com/list-review/<%=post.url%>&text=Get+the+<%=post.name%>+for+your+daily+fitness+needs" target="_blank" rel="noopener noreferrer nofollow"><i class="fa-brands fa-x-twitter"></i></a>
                   </div>
                   <div>
                     <a href="https://pinterest.com/pin/create/button/?url=http://www.mavnew.com/list-review/<%=post.url%>&media=&description=Get the <%=post.name%> for your daily fitness needs" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-pinterest-p"></i></a>
@@ -111,21 +104,20 @@
           </main>
           <aside class="col-lg-3 col-md-11 ml-lg-4" id="aside">
             <article id="owner-info">
-              <!-- <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,h_270,q_auto,r_200,w_270/tife.jpg" alt="website owner" class="d-block mx-auto mt-4 mb-4"> -->
-              <img src="https://res.cloudinary.com/mavnew/c_scale,f_auto,h_270,q_auto,r_200,w_270/samples/people/kitchen-bar.jpg" alt="website owner" class="d-block mx-auto mt-5 mt-lg-4 mb-4">
-              <h2>Hello!! My name is Kenny</h2>
+              <img src="https://res.cloudinary.com/mavnew/image/upload/c_fill,f_auto,h_270,q_auto,r_200,w_270/v1724987794/author-happy.jpg" alt="website owner" class="d-block mx-auto mt-5 mt-lg-4 mb-4">
+              <h2>Hello!! My name is John</h2>
               <p class="text-center">
                 <small class="text-muted">
-                  I love to sing, code, eat and sleep alot. I am software developer with an innovative mind. I love to think anything is possible once you set your mind in the right direction
+                  I love to sing, code, eat and sleep alot. I love to think anything is possible once you set your mind in the right direction
                 </small>
               </p>
-              <address class="text-center">
+              <!-- <address class="text-center">
                 <a href="https://web.facebook.com/kevin.yishawu/" rel="nofollow" title="Facebook" class="text-dark"><i class="fab fa-facebook-f mr-3"></i></a>
                 <a href="https://twitter.com/f_Kenny_f" rel="nofollow" title="Twitter" class="text-dark"><i class="fab fa-twitter mr-3"></i></a>
                 <a href="https://www.instagram.com/f_kenny_f/" rel="nofollow" title="Instagram" class="text-dark"><i class="fab fa-instagram mr-3"></i></a>
                 <a href="https://www.linkedin.com/in/kehinde-y-a4234311a/" title="LinkedIn" rel="nofollow" class="text-dark"><i class="fab fa-linkedin mr-3"></i></a>
                 <a href="https://www.pinterest.com/kehindeyishawu/_saved/" title="Pinterest" rel="nofollow" class="text-dark"><i class="fab fa-pinterest"></i></a>                
-              </address>
+              </address> -->
             </article>
             <section id="recent-post">
               <h2 class="mt-5 text-center text-lg-left pl-lg-4">Recent Posts</h2>
@@ -137,7 +129,7 @@
                   What are the beasts of the bikes
                 </li>
                 <li class="custom-link">
-                  Best sleek Bike 2020
+                  Bike training techniques
                 </li>
               </ul>
             </section>
