@@ -43,21 +43,21 @@ const collection = {
 //   }
 // );
 
-collection.Post.create({
-    name: "Best Recumbent Bike 2022",
-    postImg: "recumbent-bike",
-    postImgAlt: "Recumbent bike rim and paddle",
-    metaDesc: "Need a Recumbent Bike in 2022? We have got you covered. Brush through our list of top recumbent bikes for yor needs",
-    url: "best-recumbent-bike",
-    date: new Date(2022, 6, 24),
-    category: "list-review",
-    share: {
-        fb: "facebook.com"
-    }
-}, (err, post)=>{
-    if(err){
-        console.log('error: something went wrong with the post creation request in models file')
-    }else{console.log("post sucessfully created")}
-})
+// collection.Post.create({
+//     name: "Top Workouts to Try on Your Upright Exercise Bike",
+//     postImg: "home-gym",
+//     postImgAlt: "Home Gym Equipments",
+//     metaDesc: "Need some tips working with your Upright bikes? Here are some impressive tricks to try out on your next session",
+//     url: "top-workouts-to-try-on-your-upright-exercise-bike",
+//     date: new Date(2023, 5, 15),
+//     category: "list-review",
+//     share: {
+//         fb: "facebook.com"
+//     }
+// }, (err, post)=>{
+//     if(err){
+//         console.log('error: something went wrong with the post creation request in models file')
+//     }else{console.log("post sucessfully created")}
+// })
 
 module.exports = collection;
